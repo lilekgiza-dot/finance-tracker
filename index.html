@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Финансы</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root {
+    --surface-1:      #fcfcfb;
+    --page:           #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --muted:          #898781;
+    --gridline:       #e1e0d9;
+    --border:         rgba(11,11,11,0.10);
+    --good:           #0ca30c;
+    --critical:       #d03b3b;
+    --series-1: #2a78d6; /* Еда */
+    --series-2: #1baf7a; /* Комуналка */
+    --series-3: #eda100; /* Дорога */
+    --series-4: #008300; /* Хоз */
+    --series-5: #4a3aa7; /* Одежда */
+    --series-6: #e34948; /* Красота и развлечения */
+    --series-7: #e87ba4; /* Учёба */
+    --series-8: #eb6834; /* Подарки и прочее */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1:      #1a1a19;
+      --page:           #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --muted:          #898781;
+      --gridline:       #2c2c2a;
+      --border:         rgba(255,255,255,0.10);
+      --good:           #0ca30c;
+      --critical:       #e66767;
+      --series-1: #3987e5;
+      --series-2: #199e70;
+      --series-3: #c98500;
+      --series-4: #008300;
+      --series-5: #9085e9;
+      --series-6: #e66767;
+      --series-7: #d55181;
+      --series-8: #d95926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 24px;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 16px; }
+  .hero {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .hero .label { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+  .hero .value { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; }
+  .hero .delta { margin-top: 8px; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+  .hero .delta.good { color: var(--good); }
+  .hero .delta.bad { color: var(--critical); }
+
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .tile {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .tile .label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+  .tile .value { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  .card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .card h2 { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin: 0 0 12px; }
+
+  .bar-row { margin-bottom: 10px; }
+  .bar-row:last-child { margin-bottom: 0; }
+  .bar-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 13px; margin-bottom: 4px;
+  }
+  .bar-head .name { color: var(--text-primary); display: flex; align-items: center; gap: 6px; }
+  .bar-head .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .bar-head .amount { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .bar-track {
+    height: 8px; border-radius: 4px; background: var(--gridline);
+    overflow: hidden;
+  }
+  .bar-fill { height: 100%; border-radius: 4px; }
+
+  .txn-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0; border-bottom: 1px solid var(--gridline);
+  }
+  .txn-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .txn-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .txn-main { flex: 1; min-width: 0; }
+  .txn-cat { font-size: 14px; font-weight: 500; }
+  .txn-note { font-size: 12px; color: var(--muted); }
+  .txn-amt { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .txn-amt.income { color: var(--good); }
+  .txn-date { font-size: 11px; color: var(--muted); width: 34px; text-align: right; flex: none; }
+
+  .placeholder {
+    text-align: center; color: var(--text-secondary); font-size: 14px;
+    padding: 32px 16px;
+  }
+
+  .hint {
+    text-align: center; color: var(--muted); font-size: 12px;
+    padding: 8px 16px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap" id="app">
+    <div class="placeholder" id="placeholder">Загружаю данные…</div>
+  </div>
+
+<script>
+(function () {
+  var tg = window.Telegram && window.Telegram.WebApp;
+  if (tg) {
+    tg.ready();
+    tg.expand();
+  }
+
+  var CATEGORY_COLOR = {
+    "Еда": "var(--series-1)",
+    "Комуналка": "var(--series-2)",
+    "Дорога": "var(--series-3)",
+    "Хоз": "var(--series-4)",
+    "Одежда": "var(--series-5)",
+    "Красота и развлечения": "var(--series-6)",
+    "Учёба": "var(--series-7)",
+    "Подарки и прочее": "var(--series-8)"
+  };
+
+  function formatMoney(n) {
+    return Math.round(n).toLocaleString("ru-RU") + " ₽";
+  }
+
+  function render(data) {
+    var app = document.getElementById("app");
+    var net = data.month.income - data.month.expense;
+    var netClass = net >= 0 ? "good" : "bad";
+    var netSign = net >= 0 ? "+" : "";
+    var netIcon = net >= 0 ? "▲" : "▼";
+
+    var maxCat = Math.max.apply(null, data.categories.map(function (c) { return c.amount; }));
+    var sortedCats = data.categories.slice().sort(function (a, b) { return b.amount - a.amount; });
+
+    var catRows = sortedCats.map(function (c) {
+      var color = CATEGORY_COLOR[c.name] || "var(--muted)";
+      var pct = maxCat ? Math.round((c.amount / maxCat) * 100) : 0;
+      return (
+        '<div class="bar-row">' +
+          '<div class="bar-head">' +
+            '<span class="name"><span class="dot" style="background:' + color + '"></span>' + c.name + '</span>' +
+            '<span class="amount">' + formatMoney(c.amount) + '</span>' +
+          '</div>' +
+          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div>' +
+        '</div>'
+      );
+    }).join("");
+
+    var txnRows = data.recent.map(function (t) {
+      var isIncome = t.type === "income";
+      var color = isIncome ? "var(--good)" : (CATEGORY_COLOR[t.category] || "var(--muted)");
+      var amtClass = isIncome ? "txn-amt income" : "txn-amt";
+      var amtText = (isIncome ? "+" : "-") + formatMoney(t.amount);
+      return (
+        '<div class="txn-row">' +
+          '<span class="txn-dot" style="background:' + color + '"></span>' +
+          '<div class="txn-main">' +
+            '<div class="txn-cat">' + t.category + '</div>' +
+            '<div class="txn-note">' + t.note + '</div>' +
+          '</div>' +
+          '<span class="' + amtClass + '">' + amtText + '</span>' +
+          '<span class="txn-date">' + t.date + '</span>' +
+        '</div>'
+      );
+    }).join("");
+
+    app.innerHTML =
+      '<div class="hero">' +
+        '<div class="label">Баланс сегодня</div>' +
+        '<div class="value">' + formatMoney(data.balance) + '</div>' +
+        '<div class="delta ' + netClass + '">' + netIcon + ' ' + netSign + formatMoney(net) + ' за ' + data.month.label.toLowerCase() + '</div>' +
+      '</div>' +
+      '<div class="tiles">' +
+        '<div class="tile"><div class="label">Приход · ' + data.month.label + '</div><div class="value">' + formatMoney(data.month.income) + '</div></div>' +
+        '<div class="tile"><div class="label">Расход · ' + data.month.label + '</div><div class="value">' + formatMoney(data.month.expense) + '</div></div>' +
+      '</div>' +
+      '<div class="card">' +
+        '<h2>По категориям</h2>' +
+        catRows +
+      '</div>' +
+      '<div class="card">' +
+        '<h2>Последние операции</h2>' +
+        txnRows +
+      '</div>' +
+      '<div class="hint">Обновлено: ' + new Date(data.updated_at).toLocaleString("ru-RU", {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"}) + '</div>';
+  }
+
+  function showError() {
+    document.getElementById("app").innerHTML =
+      '<div class="placeholder">Не получилось загрузить данные.<br>Открой чуть позже.</div>';
+  }
+
+  fetch("data.json?v=" + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error("bad response"); return r.json(); })
+    .then(render)
+    .catch(showError);
+})();
+</script>
+</body>
+</html>
