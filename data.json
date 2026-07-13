@@ -1,0 +1,26 @@
+{
+  "updated_at": "2026-07-13T11:00:00+05:00",
+  "balance": 18500,
+  "month": {
+    "label": "Июль",
+    "income": 45000,
+    "expense": 26500
+  },
+  "categories": [
+    { "name": "Еда", "amount": 8200 },
+    { "name": "Комуналка", "amount": 4300 },
+    { "name": "Дорога", "amount": 3100 },
+    { "name": "Хоз", "amount": 2400 },
+    { "name": "Одежда", "amount": 1800 },
+    { "name": "Красота и развлечения", "amount": 2600 },
+    { "name": "Учёба", "amount": 1200 },
+    { "name": "Подарки и прочее", "amount": 2900 }
+  ],
+  "recent": [
+    { "date": "13.07", "type": "expense", "category": "Еда", "note": "кофе и обед", "amount": 450 },
+    { "date": "13.07", "type": "expense", "category": "Дорога", "note": "такси", "amount": 200 },
+    { "date": "12.07", "type": "expense", "category": "Подарки и прочее", "note": "подарок", "amount": 1500 },
+    { "date": "11.07", "type": "income", "category": "Приход", "note": "зарплата", "amount": 45000 },
+    { "date": "10.07", "type": "expense", "category": "Комуналка", "note": "жкх", "amount": 4300 }
+  ]
+}
