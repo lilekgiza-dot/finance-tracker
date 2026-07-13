@@ -16,6 +16,13 @@
     { "name": "Учёба", "amount": 1200 },
     { "name": "Подарки и прочее", "amount": 2900 }
   ],
+  "accounts": [
+    { "name": "Наличные", "amount": 3000 },
+    { "name": "Т-банк", "amount": 8000 },
+    { "name": "Сбер", "amount": 4000 },
+    { "name": "Мир", "amount": 2000 },
+    { "name": "Халва", "amount": 1500 }
+  ],
   "recent": [
     { "date": "13.07", "type": "expense", "category": "Еда", "note": "кофе и обед", "amount": 450 },
     { "date": "13.07", "type": "expense", "category": "Дорога", "note": "такси", "amount": 200 },
