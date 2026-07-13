@@ -154,6 +154,31 @@
     "Подарки и прочее": "var(--series-8)"
   };
 
+  var ACCOUNT_COLOR = {
+    "Наличные": "var(--series-1)",
+    "Т-банк": "var(--series-2)",
+    "Сбер": "var(--series-3)",
+    "Мир": "var(--series-4)",
+    "Халва": "var(--series-5)"
+  };
+
+  function renderBars(items, colorMap) {
+    var max = Math.max.apply(null, items.map(function (c) { return c.amount; }));
+    return items.slice().sort(function (a, b) { return b.amount - a.amount; }).map(function (c) {
+      var color = colorMap[c.name] || "var(--muted)";
+      var pct = max ? Math.round((c.amount / max) * 100) : 0;
+      return (
+        '<div class="bar-row">' +
+          '<div class="bar-head">' +
+            '<span class="name"><span class="dot" style="background:' + color + '"></span>' + c.name + '</span>' +
+            '<span class="amount">' + formatMoney(c.amount) + '</span>' +
+          '</div>' +
+          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div>' +
+        '</div>'
+      );
+    }).join("");
+  }
+
   function formatMoney(n) {
     return Math.round(n).toLocaleString("ru-RU") + " ₽";
   }
@@ -165,22 +190,8 @@
     var netSign = net >= 0 ? "+" : "";
     var netIcon = net >= 0 ? "▲" : "▼";
 
-    var maxCat = Math.max.apply(null, data.categories.map(function (c) { return c.amount; }));
-    var sortedCats = data.categories.slice().sort(function (a, b) { return b.amount - a.amount; });
-
-    var catRows = sortedCats.map(function (c) {
-      var color = CATEGORY_COLOR[c.name] || "var(--muted)";
-      var pct = maxCat ? Math.round((c.amount / maxCat) * 100) : 0;
-      return (
-        '<div class="bar-row">' +
-          '<div class="bar-head">' +
-            '<span class="name"><span class="dot" style="background:' + color + '"></span>' + c.name + '</span>' +
-            '<span class="amount">' + formatMoney(c.amount) + '</span>' +
-          '</div>' +
-          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div>' +
-        '</div>'
-      );
-    }).join("");
+    var catRows = renderBars(data.categories, CATEGORY_COLOR);
+    var accRows = renderBars(data.accounts || [], ACCOUNT_COLOR);
 
     var txnRows = data.recent.map(function (t) {
       var isIncome = t.type === "income";
@@ -213,6 +224,10 @@
       '<div class="card">' +
         '<h2>По категориям</h2>' +
         catRows +
+      '</div>' +
+      '<div class="card">' +
+        '<h2>По картам и счетам</h2>' +
+        accRows +
       '</div>' +
       '<div class="card">' +
         '<h2>Последние операции</h2>' +
