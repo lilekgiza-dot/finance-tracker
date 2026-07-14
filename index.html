@@ -27,6 +27,8 @@
     --series-6: #e34948; /* Красота и развлечения */
     --series-7: #e87ba4; /* Учёба */
     --series-8: #eb6834; /* Подарки и прочее */
+    --accent:   #1baf7a; /* бирюзовый акцент бренда */
+    --accent-tint: rgba(27,175,122,0.12);
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -47,6 +49,8 @@
       --series-6: #e66767;
       --series-7: #d55181;
       --series-8: #d95926;
+      --accent:   #199e70;
+      --accent-tint: rgba(25,158,112,0.18);
     }
   }
   * { box-sizing: border-box; }
@@ -91,20 +95,23 @@
   }
   .card h2 { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin: 0 0 12px; }
 
-  .bar-row { margin-bottom: 10px; }
-  .bar-row:last-child { margin-bottom: 0; }
-  .bar-head {
-    display: flex; justify-content: space-between; align-items: baseline;
-    font-size: 13px; margin-bottom: 4px;
+  .data-table { width: 100%; border-collapse: collapse; }
+  .data-table tr { border-bottom: 1px solid var(--gridline); }
+  .data-table tr:last-child { border-bottom: none; }
+  .data-table td { padding: 9px 0; font-size: 14px; }
+  .data-table .name-cell { display: flex; align-items: center; gap: 8px; color: var(--text-primary); }
+  .data-table .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .data-table .amount-cell { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-secondary); font-weight: 600; }
+
+  .savings-band {
+    background: var(--accent-tint);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: space-between;
   }
-  .bar-head .name { color: var(--text-primary); display: flex; align-items: center; gap: 6px; }
-  .bar-head .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-  .bar-head .amount { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-  .bar-track {
-    height: 8px; border-radius: 4px; background: var(--gridline);
-    overflow: hidden;
-  }
-  .bar-fill { height: 100%; border-radius: 4px; }
+  .savings-band .label { font-size: 13px; color: var(--accent); font-weight: 600; }
+  .savings-band .value { font-size: 18px; color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
 
   .txn-row {
     display: flex; align-items: center; gap: 10px;
@@ -162,21 +169,17 @@
     "Халва": "var(--series-5)"
   };
 
-  function renderBars(items, colorMap) {
-    var max = Math.max.apply(null, items.map(function (c) { return c.amount; }));
-    return items.slice().sort(function (a, b) { return b.amount - a.amount; }).map(function (c) {
+  function renderTable(items, colorMap) {
+    var rows = items.slice().sort(function (a, b) { return b.amount - a.amount; }).map(function (c) {
       var color = colorMap[c.name] || "var(--muted)";
-      var pct = max ? Math.round((c.amount / max) * 100) : 0;
       return (
-        '<div class="bar-row">' +
-          '<div class="bar-head">' +
-            '<span class="name"><span class="dot" style="background:' + color + '"></span>' + c.name + '</span>' +
-            '<span class="amount">' + formatMoney(c.amount) + '</span>' +
-          '</div>' +
-          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div>' +
-        '</div>'
+        '<tr>' +
+          '<td><span class="name-cell"><span class="dot" style="background:' + color + '"></span>' + c.name + '</span></td>' +
+          '<td class="amount-cell">' + formatMoney(c.amount) + '</td>' +
+        '</tr>'
       );
     }).join("");
+    return '<table class="data-table">' + rows + '</table>';
   }
 
   function formatMoney(n) {
@@ -190,8 +193,8 @@
     var netSign = net >= 0 ? "+" : "";
     var netIcon = net >= 0 ? "▲" : "▼";
 
-    var catRows = renderBars(data.categories, CATEGORY_COLOR);
-    var accRows = renderBars(data.accounts || [], ACCOUNT_COLOR);
+    var catTable = renderTable(data.categories, CATEGORY_COLOR);
+    var accTable = renderTable(data.accounts || [], ACCOUNT_COLOR);
 
     var txnRows = data.recent.map(function (t) {
       var isIncome = t.type === "income";
@@ -221,13 +224,18 @@
         '<div class="tile"><div class="label">Приход · ' + data.month.label + '</div><div class="value">' + formatMoney(data.month.income) + '</div></div>' +
         '<div class="tile"><div class="label">Расход · ' + data.month.label + '</div><div class="value">' + formatMoney(data.month.expense) + '</div></div>' +
       '</div>' +
+      (data.month.savings != null ?
+        '<div class="savings-band">' +
+          '<span class="label">Накопления · ' + data.month.label + '</span>' +
+          '<span class="value">' + formatMoney(data.month.savings) + '</span>' +
+        '</div>' : '') +
       '<div class="card">' +
         '<h2>По категориям</h2>' +
-        catRows +
+        catTable +
       '</div>' +
       '<div class="card">' +
         '<h2>По картам и счетам</h2>' +
-        accRows +
+        accTable +
       '</div>' +
       '<div class="card">' +
         '<h2>Последние операции</h2>' +
