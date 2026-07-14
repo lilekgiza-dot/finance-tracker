@@ -4,7 +4,8 @@
   "month": {
     "label": "Июль",
     "income": 45000,
-    "expense": 26500
+    "expense": 26500,
+    "savings": 5000
   },
   "categories": [
     { "name": "Еда", "amount": 8200 },
