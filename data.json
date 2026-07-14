@@ -1,34 +1,27 @@
 {
-  "updated_at": "2026-07-13T11:00:00+05:00",
-  "balance": 18500,
+  "updated_at": "2026-07-14T12:34:00+05:00",
+  "balance": 1402.13,
+  "balance_label": "Халва (другие карты ещё не добавлены)",
   "month": {
     "label": "Июль",
-    "income": 45000,
-    "expense": 26500,
-    "savings": 5000
+    "income": 0,
+    "expense": 1339.83,
+    "savings": 0
   },
   "categories": [
-    { "name": "Еда", "amount": 8200 },
-    { "name": "Комуналка", "amount": 4300 },
-    { "name": "Дорога", "amount": 3100 },
-    { "name": "Хоз", "amount": 2400 },
-    { "name": "Одежда", "amount": 1800 },
-    { "name": "Красота и развлечения", "amount": 2600 },
-    { "name": "Учёба", "amount": 1200 },
-    { "name": "Подарки и прочее", "amount": 2900 }
+    { "name": "Еда", "amount": 1339.83 },
+    { "name": "Комуналка", "amount": 0 },
+    { "name": "Дорога", "amount": 0 },
+    { "name": "Хоз", "amount": 0 },
+    { "name": "Одежда", "amount": 0 },
+    { "name": "Красота и развлечения", "amount": 0 },
+    { "name": "Учёба", "amount": 0 },
+    { "name": "Подарки и прочее", "amount": 0 }
   ],
   "accounts": [
-    { "name": "Наличные", "amount": 3000 },
-    { "name": "Т-банк", "amount": 8000 },
-    { "name": "Сбер", "amount": 4000 },
-    { "name": "Мир", "amount": 2000 },
-    { "name": "Халва", "amount": 1500 }
+    { "name": "Халва", "amount": 1402.13 }
   ],
   "recent": [
-    { "date": "13.07", "type": "expense", "category": "Еда", "note": "кофе и обед", "amount": 450 },
-    { "date": "13.07", "type": "expense", "category": "Дорога", "note": "такси", "amount": 200 },
-    { "date": "12.07", "type": "expense", "category": "Подарки и прочее", "note": "подарок", "amount": 1500 },
-    { "date": "11.07", "type": "income", "category": "Приход", "note": "зарплата", "amount": 45000 },
-    { "date": "10.07", "type": "expense", "category": "Комуналка", "note": "жкх", "amount": 4300 }
+    { "date": "14.07", "type": "expense", "category": "Еда", "note": "4 покупки", "amount": 1339.83 }
   ]
 }
