@@ -216,7 +216,7 @@
 
     app.innerHTML =
       '<div class="hero">' +
-        '<div class="label">Баланс сегодня</div>' +
+        '<div class="label">' + (data.balance_label || "Баланс сегодня") + '</div>' +
         '<div class="value">' + formatMoney(data.balance) + '</div>' +
         '<div class="delta ' + netClass + '">' + netIcon + ' ' + netSign + formatMoney(net) + ' за ' + data.month.label.toLowerCase() + '</div>' +
       '</div>' +
