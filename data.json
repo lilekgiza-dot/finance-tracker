@@ -5,6 +5,9 @@
   "days_in_month": 31,
   "balance_label": "Халва (другие карты ещё не добавлены)",
   "balance": 1402.13,
+  "accounts": [
+    { "name": "Халва", "amount": 1402.13 }
+  ],
   "categories": {
     "income": [
       { "name": "Пенсия", "plan": null },
@@ -34,6 +37,6 @@
     ]
   },
   "operations": [
-    { "date": "2026-07-14", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 1339.83, "note": "4 покупки" }
+    { "date": "2026-07-14", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 1339.83, "note": "4 покупки", "account": "Халва" }
   ]
 }
