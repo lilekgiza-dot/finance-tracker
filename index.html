@@ -125,6 +125,15 @@
     return dev >= 0 ? "dev-pos" : "dev-neg";
   }
 
+  var NOTE_CATEGORIES = ["Образование","Развлечения","Одежда/Обувь","Крупные покупки","Дом, сад и огород","Здоровье + Красота","Пром.товары","Непредвиденные затраты"];
+
+  function notesForCategory(data, name) {
+    return data.operations
+      .filter(function (op) { return op.category === name && op.note; })
+      .map(function (op) { return op.note + " (" + op.date.slice(8,10) + "." + op.date.slice(5,7) + ")"; })
+      .join(", ");
+  }
+
   function computeFacts(data) {
     var facts = {};
     var all = [];
@@ -152,6 +161,10 @@
         '<td>' + money(fact) + '</td>' +
         '<td class="' + devClass(dev) + '">' + (dev === null ? "—" : money(dev)) + '</td></tr>'
       );
+      if (NOTE_CATEGORIES.indexOf(c.name) !== -1) {
+        var notes = notesForCategory(data, c.name);
+        rows.push('<tr><td colspan="4" class="muted" style="padding-top:0;padding-bottom:10px;font-size:12px;">↳ на что: ' + (notes || "—") + '</td></tr>');
+      }
       return fact;
     }
 
@@ -238,13 +251,20 @@
       var amtClass = isIncome ? "ops-amt income" : "ops-amt";
       var amtText = (isIncome ? "+" : "-") + money(Math.abs(op.amount)).replace("-", "");
       var dateShort = op.date.slice(8, 10) + "." + op.date.slice(5, 7);
+      var noteLine = [op.note, op.account].filter(Boolean).join(" · ");
       return (
         '<div class="ops-row">' +
           '<span class="ops-date">' + dateShort + '</span>' +
-          '<span class="ops-cat">' + op.category + (op.note ? '<div class="ops-note">' + op.note + '</div>' : '') + '</span>' +
+          '<span class="ops-cat">' + op.category + (noteLine ? '<div class="ops-note">' + noteLine + '</div>' : '') + '</span>' +
           '<span class="' + amtClass + '">' + amtText + '</span>' +
         '</div>'
       );
+    }).join("");
+  }
+
+  function renderAccounts(data) {
+    return (data.accounts || []).map(function (a) {
+      return '<tr><td>' + a.name + '</td><td>' + money(a.amount) + '</td></tr>';
     }).join("");
   }
 
@@ -257,6 +277,7 @@
         '<span class="balance-chip">' + (data.balance_label || "Баланс") + ': <b>' + money(data.balance) + '</b></span>' +
       '</div>' +
       '<div class="card"><h2>Бюджет месяца</h2>' + renderBudgetTable(data, facts) + '</div>' +
+      '<div class="card"><h2>По картам и счетам</h2><table class="budget">' + renderAccounts(data) + '</table></div>' +
       '<div class="card"><h2>По дням месяца</h2>' + renderDailyTable(data) + '</div>' +
       '<div class="card"><h2>Операции (на что потрачено)</h2>' + renderOps(data) + '</div>' +
       '<div class="placeholder" style="padding:8px 0;font-size:12px;">Обновлено: ' +
