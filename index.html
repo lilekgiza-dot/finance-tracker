@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -19,16 +19,9 @@
     --border:         rgba(11,11,11,0.10);
     --good:           #0ca30c;
     --critical:       #d03b3b;
-    --series-1: #2a78d6; /* Еда */
-    --series-2: #1baf7a; /* Комуналка */
-    --series-3: #eda100; /* Дорога */
-    --series-4: #008300; /* Хоз */
-    --series-5: #4a3aa7; /* Одежда */
-    --series-6: #e34948; /* Красота и развлечения */
-    --series-7: #e87ba4; /* Учёба */
-    --series-8: #eb6834; /* Подарки и прочее */
-    --accent:   #1baf7a; /* бирюзовый акцент бренда */
-    --accent-tint: rgba(27,175,122,0.12);
+    --accent:         #1baf7a;
+    --accent-tint:    rgba(27,175,122,0.10);
+    --group-head:     #f2f1ec;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -41,16 +34,9 @@
       --border:         rgba(255,255,255,0.10);
       --good:           #0ca30c;
       --critical:       #e66767;
-      --series-1: #3987e5;
-      --series-2: #199e70;
-      --series-3: #c98500;
-      --series-4: #008300;
-      --series-5: #9085e9;
-      --series-6: #e66767;
-      --series-7: #d55181;
-      --series-8: #d95926;
-      --accent:   #199e70;
-      --accent-tint: rgba(25,158,112,0.18);
+      --accent:         #199e70;
+      --accent-tint:    rgba(25,158,112,0.16);
+      --group-head:     #232320;
     }
   }
   * { box-sizing: border-box; }
@@ -60,81 +46,63 @@
     background: var(--page);
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
-    padding-bottom: 24px;
   }
-  .wrap { max-width: 480px; margin: 0 auto; padding: 16px; }
-  .hero {
-    background: var(--surface-1);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 12px;
-  }
-  .hero .label { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
-  .hero .value { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; }
-  .hero .delta { margin-top: 8px; font-size: 14px; display: flex; align-items: center; gap: 6px; }
-  .hero .delta.good { color: var(--good); }
-  .hero .delta.bad { color: var(--critical); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-  .tile {
-    background: var(--surface-1);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 14px;
+  .top-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 12px; margin-bottom: 16px;
   }
-  .tile .label { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
-  .tile .value { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .top-row h1 { font-size: 20px; margin: 0; }
+  .balance-chip {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 12px; padding: 8px 14px; font-size: 14px;
+  }
+  .balance-chip b { font-variant-numeric: tabular-nums; }
 
   .card {
     background: var(--surface-1);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 12px;
-  }
-  .card h2 { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin: 0 0 12px; }
-
-  .data-table { width: 100%; border-collapse: collapse; }
-  .data-table tr { border-bottom: 1px solid var(--gridline); }
-  .data-table tr:last-child { border-bottom: none; }
-  .data-table td { padding: 9px 0; font-size: 14px; }
-  .data-table .name-cell { display: flex; align-items: center; gap: 8px; color: var(--text-primary); }
-  .data-table .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-  .data-table .amount-cell { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-secondary); font-weight: 600; }
-
-  .savings-band {
-    background: var(--accent-tint);
     border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 12px;
-    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px;
+    margin-bottom: 20px;
+    overflow-x: auto;
   }
-  .savings-band .label { font-size: 13px; color: var(--accent); font-weight: 600; }
-  .savings-band .value { font-size: 18px; color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .card h2 { font-size: 15px; font-weight: 600; margin: 0 0 12px; }
 
-  .txn-row {
+  table.budget { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+  table.budget th { text-align: right; color: var(--text-secondary); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--gridline); }
+  table.budget th:first-child { text-align: left; }
+  table.budget td { padding: 6px 8px; border-bottom: 1px solid var(--gridline); text-align: right; font-variant-numeric: tabular-nums; }
+  table.budget td:first-child { text-align: left; font-variant-numeric: normal; }
+  table.budget tr.group-head td { background: var(--group-head); font-weight: 700; }
+  table.budget tr.subtotal td { font-weight: 700; border-top: 1px solid var(--muted); }
+  table.budget tr.grand td { font-weight: 700; background: var(--accent-tint); color: var(--accent); }
+  table.budget td.dev-pos { color: var(--good); }
+  table.budget td.dev-neg { color: var(--critical); }
+  table.budget td.muted { color: var(--muted); }
+
+  table.daily { border-collapse: collapse; font-size: 12px; min-width: 900px; }
+  table.daily th, table.daily td { padding: 4px 6px; border: 1px solid var(--gridline); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.daily th:first-child, table.daily td:first-child {
+    text-align: left; position: sticky; left: 0; background: var(--surface-1);
+    min-width: 170px; font-variant-numeric: normal;
+  }
+  table.daily tr.group-head td { background: var(--group-head); font-weight: 700; }
+  table.daily td.zero { color: var(--muted); }
+
+  .ops-row {
     display: flex; align-items: center; gap: 10px;
-    padding: 10px 0; border-bottom: 1px solid var(--gridline);
+    padding: 8px 0; border-bottom: 1px solid var(--gridline); font-size: 13px;
   }
-  .txn-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .txn-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
-  .txn-main { flex: 1; min-width: 0; }
-  .txn-cat { font-size: 14px; font-weight: 500; }
-  .txn-note { font-size: 12px; color: var(--muted); }
-  .txn-amt { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .txn-amt.income { color: var(--good); }
-  .txn-date { font-size: 11px; color: var(--muted); width: 34px; text-align: right; flex: none; }
+  .ops-row:last-child { border-bottom: none; }
+  .ops-date { color: var(--muted); width: 70px; flex: none; }
+  .ops-cat { flex: 1; min-width: 0; }
+  .ops-note { color: var(--muted); font-size: 12px; }
+  .ops-amt { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+  .ops-amt.income { color: var(--good); }
 
-  .placeholder {
-    text-align: center; color: var(--text-secondary); font-size: 14px;
-    padding: 32px 16px;
-  }
-
-  .hint {
-    text-align: center; color: var(--muted); font-size: 12px;
-    padding: 8px 16px 0;
-  }
+  .placeholder { text-align: center; color: var(--text-secondary); padding: 40px 16px; }
 </style>
 </head>
 <body>
@@ -145,108 +113,159 @@
 <script>
 (function () {
   var tg = window.Telegram && window.Telegram.WebApp;
-  if (tg) {
-    tg.ready();
-    tg.expand();
+  if (tg) { tg.ready(); tg.expand(); }
+
+  function money(n) {
+    if (n === null || n === undefined) return "—";
+    var sign = n < 0 ? "-" : "";
+    return sign + Math.round(Math.abs(n)).toLocaleString("ru-RU") + " ₽";
+  }
+  function devClass(dev) {
+    if (dev === null) return "muted";
+    return dev >= 0 ? "dev-pos" : "dev-neg";
   }
 
-  var CATEGORY_COLOR = {
-    "Еда": "var(--series-1)",
-    "Комуналка": "var(--series-2)",
-    "Дорога": "var(--series-3)",
-    "Хоз": "var(--series-4)",
-    "Одежда": "var(--series-5)",
-    "Красота и развлечения": "var(--series-6)",
-    "Учёба": "var(--series-7)",
-    "Подарки и прочее": "var(--series-8)"
-  };
+  function computeFacts(data) {
+    var facts = {};
+    var all = [];
+    ["mandatory", "optional"].forEach(function (g) {
+      data.categories[g].forEach(function (c) { all.push(c.name); });
+    });
+    data.categories.income.forEach(function (c) { all.push(c.name); });
+    data.categories.savings.forEach(function (c) { all.push(c.name); });
+    all.forEach(function (name) { facts[name] = 0; });
+    data.operations.forEach(function (op) {
+      facts[op.category] = (facts[op.category] || 0) + op.amount;
+    });
+    return facts;
+  }
 
-  var ACCOUNT_COLOR = {
-    "Наличные": "var(--series-1)",
-    "Т-банк": "var(--series-2)",
-    "Сбер": "var(--series-3)",
-    "Мир": "var(--series-4)",
-    "Халва": "var(--series-5)"
-  };
-
-  function renderTable(items, colorMap) {
-    var rows = items.slice().sort(function (a, b) { return b.amount - a.amount; }).map(function (c) {
-      var color = colorMap[c.name] || "var(--muted)";
-      return (
-        '<tr>' +
-          '<td><span class="name-cell"><span class="dot" style="background:' + color + '"></span>' + c.name + '</span></td>' +
-          '<td class="amount-cell">' + formatMoney(c.amount) + '</td>' +
-        '</tr>'
+  function renderBudgetTable(data, facts) {
+    var rows = [];
+    function catRow(c) {
+      var fact = facts[c.name] || 0;
+      var plan = c.plan;
+      var dev = plan == null ? null : (plan - fact);
+      rows.push(
+        '<tr><td>' + c.name + '</td>' +
+        '<td class="muted">' + money(plan) + '</td>' +
+        '<td>' + money(fact) + '</td>' +
+        '<td class="' + devClass(dev) + '">' + (dev === null ? "—" : money(dev)) + '</td></tr>'
       );
-    }).join("");
-    return '<table class="data-table">' + rows + '</table>';
+      return fact;
+    }
+
+    rows.push('<tr><th>Категория</th><th>План</th><th>Факт</th><th>Отклонение</th></tr>');
+
+    rows.push('<tr class="group-head"><td colspan="4">ДОХОДЫ</td></tr>');
+    var incomeTotal = 0;
+    data.categories.income.forEach(function (c) { incomeTotal += catRow(c); });
+    rows.push('<tr class="subtotal"><td>ИТОГО ДОХОДЫ</td><td></td><td>' + money(incomeTotal) + '</td><td></td></tr>');
+
+    rows.push('<tr class="group-head"><td colspan="4">РАСХОДЫ — Обязательные</td></tr>');
+    var mandTotal = 0;
+    data.categories.mandatory.forEach(function (c) { mandTotal += catRow(c); });
+
+    rows.push('<tr class="group-head"><td colspan="4">РАСХОДЫ — Необязательные</td></tr>');
+    var optTotal = 0;
+    data.categories.optional.forEach(function (c) { optTotal += catRow(c); });
+
+    var expenseTotal = mandTotal + optTotal;
+    rows.push('<tr class="subtotal"><td>ИТОГО РАСХОДЫ</td><td></td><td>' + money(expenseTotal) + '</td><td></td></tr>');
+
+    rows.push('<tr class="group-head"><td colspan="4">НАКОПЛЕНИЯ</td></tr>');
+    var auto10 = Math.round(incomeTotal * 0.10 * 100) / 100;
+    rows.push('<tr><td>10% от поступлений (авто)</td><td class="muted">—</td><td>' + money(auto10) + '</td><td class="muted">—</td></tr>');
+    var savingsTotal = auto10;
+    data.categories.savings.forEach(function (c) { savingsTotal += catRow(c); });
+    rows.push('<tr class="subtotal"><td>ИТОГО НАКОПЛЕНИЯ</td><td></td><td>' + money(savingsTotal) + '</td><td></td></tr>');
+
+    rows.push('<tr class="subtotal"><td>ИТОГО РАСХОДЫ + НАКОПЛЕНИЯ</td><td></td><td>' + money(expenseTotal + savingsTotal) + '</td><td></td></tr>');
+
+    var net = incomeTotal - expenseTotal - savingsTotal;
+    rows.push('<tr class="grand"><td>ЭКОНОМИЯ / ПЕРЕРАСХОД</td><td></td><td>' + money(net) + '</td><td></td></tr>');
+
+    return '<table class="budget">' + rows.join("") + '</table>';
   }
 
-  function formatMoney(n) {
-    return Math.round(n).toLocaleString("ru-RU") + " ₽";
+  function renderDailyTable(data) {
+    var days = data.days_in_month;
+    var monthStart = new Date(data.month_start + "T00:00:00");
+    var dayTotals = {};
+    for (var d = 1; d <= days; d++) dayTotals[d] = {};
+
+    data.operations.forEach(function (op) {
+      var opDate = new Date(op.date + "T00:00:00");
+      var day = opDate.getDate();
+      if (opDate.getMonth() !== monthStart.getMonth()) return;
+      dayTotals[day][op.category] = (dayTotals[day][op.category] || 0) + op.amount;
+    });
+
+    function headerRow() {
+      var cells = ['<th>Категория</th>'];
+      for (var d = 1; d <= days; d++) cells.push('<th>' + d + '</th>');
+      return '<tr>' + cells.join("") + '</tr>';
+    }
+    function catRow(name) {
+      var cells = ['<td>' + name + '</td>'];
+      for (var d = 1; d <= days; d++) {
+        var v = dayTotals[d][name];
+        cells.push(v ? '<td>' + money(v) + '</td>' : '<td class="zero">·</td>');
+      }
+      return '<tr>' + cells.join("") + '</tr>';
+    }
+    function groupHead(label) {
+      return '<tr class="group-head"><td colspan="' + (days + 1) + '">' + label + '</td></tr>';
+    }
+
+    var rows = [headerRow()];
+    rows.push(groupHead("ДОХОДЫ"));
+    data.categories.income.forEach(function (c) { rows.push(catRow(c.name)); });
+    rows.push(groupHead("ОБЯЗАТЕЛЬНЫЕ"));
+    data.categories.mandatory.forEach(function (c) { rows.push(catRow(c.name)); });
+    rows.push(groupHead("НЕОБЯЗАТЕЛЬНЫЕ"));
+    data.categories.optional.forEach(function (c) { rows.push(catRow(c.name)); });
+    rows.push(groupHead("НАКОПЛЕНИЯ"));
+    data.categories.savings.forEach(function (c) { rows.push(catRow(c.name)); });
+
+    return '<table class="daily">' + rows.join("") + '</table>';
   }
 
-  function render(data) {
-    var app = document.getElementById("app");
-    var net = data.month.income - data.month.expense;
-    var netClass = net >= 0 ? "good" : "bad";
-    var netSign = net >= 0 ? "+" : "";
-    var netIcon = net >= 0 ? "▲" : "▼";
-
-    var catTable = renderTable(data.categories, CATEGORY_COLOR);
-    var accTable = renderTable(data.accounts || [], ACCOUNT_COLOR);
-
-    var txnRows = data.recent.map(function (t) {
-      var isIncome = t.type === "income";
-      var color = isIncome ? "var(--good)" : (CATEGORY_COLOR[t.category] || "var(--muted)");
-      var amtClass = isIncome ? "txn-amt income" : "txn-amt";
-      var amtText = (isIncome ? "+" : "-") + formatMoney(t.amount);
+  function renderOps(data) {
+    var sorted = data.operations.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
+    return sorted.map(function (op) {
+      var isIncome = op.type === "income";
+      var amtClass = isIncome ? "ops-amt income" : "ops-amt";
+      var amtText = (isIncome ? "+" : "-") + money(Math.abs(op.amount)).replace("-", "");
+      var dateShort = op.date.slice(8, 10) + "." + op.date.slice(5, 7);
       return (
-        '<div class="txn-row">' +
-          '<span class="txn-dot" style="background:' + color + '"></span>' +
-          '<div class="txn-main">' +
-            '<div class="txn-cat">' + t.category + '</div>' +
-            '<div class="txn-note">' + t.note + '</div>' +
-          '</div>' +
+        '<div class="ops-row">' +
+          '<span class="ops-date">' + dateShort + '</span>' +
+          '<span class="ops-cat">' + op.category + (op.note ? '<div class="ops-note">' + op.note + '</div>' : '') + '</span>' +
           '<span class="' + amtClass + '">' + amtText + '</span>' +
-          '<span class="txn-date">' + t.date + '</span>' +
         '</div>'
       );
     }).join("");
+  }
 
+  function render(data) {
+    var facts = computeFacts(data);
+    var app = document.getElementById("app");
     app.innerHTML =
-      '<div class="hero">' +
-        '<div class="label">' + (data.balance_label || "Баланс сегодня") + '</div>' +
-        '<div class="value">' + formatMoney(data.balance) + '</div>' +
-        '<div class="delta ' + netClass + '">' + netIcon + ' ' + netSign + formatMoney(net) + ' за ' + data.month.label.toLowerCase() + '</div>' +
+      '<div class="top-row">' +
+        '<h1>' + data.month_label + '</h1>' +
+        '<span class="balance-chip">' + (data.balance_label || "Баланс") + ': <b>' + money(data.balance) + '</b></span>' +
       '</div>' +
-      '<div class="tiles">' +
-        '<div class="tile"><div class="label">Приход · ' + data.month.label + '</div><div class="value">' + formatMoney(data.month.income) + '</div></div>' +
-        '<div class="tile"><div class="label">Расход · ' + data.month.label + '</div><div class="value">' + formatMoney(data.month.expense) + '</div></div>' +
-      '</div>' +
-      (data.month.savings != null ?
-        '<div class="savings-band">' +
-          '<span class="label">Накопления · ' + data.month.label + '</span>' +
-          '<span class="value">' + formatMoney(data.month.savings) + '</span>' +
-        '</div>' : '') +
-      '<div class="card">' +
-        '<h2>По категориям</h2>' +
-        catTable +
-      '</div>' +
-      '<div class="card">' +
-        '<h2>По картам и счетам</h2>' +
-        accTable +
-      '</div>' +
-      '<div class="card">' +
-        '<h2>Последние операции</h2>' +
-        txnRows +
-      '</div>' +
-      '<div class="hint">Обновлено: ' + new Date(data.updated_at).toLocaleString("ru-RU", {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"}) + '</div>';
+      '<div class="card"><h2>Бюджет месяца</h2>' + renderBudgetTable(data, facts) + '</div>' +
+      '<div class="card"><h2>По дням месяца</h2>' + renderDailyTable(data) + '</div>' +
+      '<div class="card"><h2>Операции (на что потрачено)</h2>' + renderOps(data) + '</div>' +
+      '<div class="placeholder" style="padding:8px 0;font-size:12px;">Обновлено: ' +
+        new Date(data.updated_at).toLocaleString("ru-RU", {day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}) +
+      '</div>';
   }
 
   function showError() {
-    document.getElementById("app").innerHTML =
-      '<div class="placeholder">Не получилось загрузить данные.<br>Открой чуть позже.</div>';
+    document.getElementById("app").innerHTML = '<div class="placeholder">Не получилось загрузить данные.<br>Открой чуть позже.</div>';
   }
 
   fetch("data.json?v=" + Date.now())
