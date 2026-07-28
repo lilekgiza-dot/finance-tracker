@@ -82,12 +82,13 @@
   table.budget td.dev-neg { color: var(--critical); }
   table.budget td.muted { color: var(--muted); }
 
-  table.daily { border-collapse: collapse; font-size: 12px; min-width: 900px; }
-  table.daily th, table.daily td { padding: 4px 6px; border: 1px solid var(--gridline); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.daily { border-collapse: collapse; font-size: 12px; min-width: 1400px; table-layout: fixed; }
+  table.daily th, table.daily td { padding: 4px 6px; border: 1px solid var(--gridline); text-align: right; font-variant-numeric: tabular-nums; width: 90px; vertical-align: top; }
   table.daily th:first-child, table.daily td:first-child {
     text-align: left; position: sticky; left: 0; background: var(--surface-1);
-    min-width: 170px; font-variant-numeric: normal;
+    width: 170px; font-variant-numeric: normal;
   }
+  table.daily .ops-note { text-align: left; }
   table.daily tr.group-head td { background: var(--group-head); font-weight: 700; }
   table.daily td.zero { color: var(--muted); }
 
@@ -204,14 +205,15 @@
   function renderDailyTable(data) {
     var days = data.days_in_month;
     var monthStart = new Date(data.month_start + "T00:00:00");
-    var dayTotals = {};
-    for (var d = 1; d <= days; d++) dayTotals[d] = {};
+    var dayOps = {};
+    for (var d = 1; d <= days; d++) dayOps[d] = {};
 
     data.operations.forEach(function (op) {
       var opDate = new Date(op.date + "T00:00:00");
       var day = opDate.getDate();
       if (opDate.getMonth() !== monthStart.getMonth()) return;
-      dayTotals[day][op.category] = (dayTotals[day][op.category] || 0) + op.amount;
+      if (!dayOps[day][op.category]) dayOps[day][op.category] = [];
+      dayOps[day][op.category].push(op);
     });
 
     function headerRow() {
@@ -222,8 +224,17 @@
     function catRow(name) {
       var cells = ['<td>' + name + '</td>'];
       for (var d = 1; d <= days; d++) {
-        var v = dayTotals[d][name];
-        cells.push(v ? '<td>' + money(v) + '</td>' : '<td class="zero">·</td>');
+        var ops = dayOps[d][name];
+        if (!ops || !ops.length) { cells.push('<td class="zero">·</td>'); continue; }
+        var sum = ops.reduce(function (s, o) { return s + o.amount; }, 0);
+        var detail = ops.map(function (o) {
+          return [o.note, o.account].filter(Boolean).join(" · ");
+        }).filter(Boolean).join("<br>");
+        cells.push(
+          '<td>' + money(sum) +
+          (detail ? '<div class="ops-note" style="white-space:normal;">' + detail + '</div>' : '') +
+          '</td>'
+        );
       }
       return '<tr>' + cells.join("") + '</tr>';
     }
