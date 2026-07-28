@@ -8,6 +8,10 @@
   "accounts": [
     { "name": "Халва", "amount": 1014.70 }
   ],
+  "annual_report": {
+    "current_month_index": 6,
+    "archive": []
+  },
   "categories": {
     "income": [
       { "name": "Пенсия", "plan": null },
