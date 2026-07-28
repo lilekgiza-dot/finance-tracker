@@ -126,15 +126,6 @@
     return dev >= 0 ? "dev-pos" : "dev-neg";
   }
 
-  var NOTE_CATEGORIES = ["Образование","Развлечения","Одежда/Обувь","Крупные покупки","Дом, сад и огород","Здоровье + Красота","Пром.товары","Непредвиденные затраты"];
-
-  function notesForCategory(data, name) {
-    return data.operations
-      .filter(function (op) { return op.category === name && op.note; })
-      .map(function (op) { return op.note + " (" + op.date.slice(8,10) + "." + op.date.slice(5,7) + ")"; })
-      .join(", ");
-  }
-
   function computeFacts(data) {
     var facts = {};
     var all = [];
@@ -162,10 +153,6 @@
         '<td>' + money(fact) + '</td>' +
         '<td class="' + devClass(dev) + '">' + (dev === null ? "—" : money(dev)) + '</td></tr>'
       );
-      if (NOTE_CATEGORIES.indexOf(c.name) !== -1) {
-        var notes = notesForCategory(data, c.name);
-        rows.push('<tr><td colspan="4" class="muted" style="padding-top:0;padding-bottom:10px;font-size:12px;">↳ на что: ' + (notes || "—") + '</td></tr>');
-      }
       return fact;
     }
 
