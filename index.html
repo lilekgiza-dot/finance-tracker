@@ -90,6 +90,7 @@
   }
   table.daily .ops-note { text-align: left; }
   table.daily tr.group-head td { background: var(--group-head); font-weight: 700; }
+  table.daily #today-col { background: var(--accent-tint); color: var(--accent); }
   table.daily td.zero { color: var(--muted); }
 
   .ops-row {
@@ -203,9 +204,17 @@
       dayOps[day][op.category].push(op);
     });
 
+    var todayDay = null;
+    var now = new Date();
+    if (now.getFullYear() === monthStart.getFullYear() && now.getMonth() === monthStart.getMonth()) {
+      todayDay = now.getDate();
+    }
+
     function headerRow() {
       var cells = ['<th>Категория</th>'];
-      for (var d = 1; d <= days; d++) cells.push('<th>' + d + '</th>');
+      for (var d = 1; d <= days; d++) {
+        cells.push('<th' + (d === todayDay ? ' id="today-col"' : '') + '>' + d + '</th>');
+      }
       return '<tr>' + cells.join("") + '</tr>';
     }
     function catRow(name) {
@@ -281,6 +290,11 @@
       '<div class="placeholder" style="padding:8px 0;font-size:12px;">Обновлено: ' +
         new Date(data.updated_at).toLocaleString("ru-RU", {day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}) +
       '</div>';
+
+    var todayCol = document.getElementById("today-col");
+    if (todayCol) {
+      todayCol.scrollIntoView({ inline: "end", block: "nearest" });
+    }
   }
 
   function showError() {
