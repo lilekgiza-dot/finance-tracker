@@ -1,27 +1,39 @@
 {
-  "updated_at": "2026-07-14T12:34:00+05:00",
-  "balance": 1402.13,
+  "updated_at": "2026-07-28T14:40:00+05:00",
+  "month_label": "Июль 2026",
+  "month_start": "2026-07-01",
+  "days_in_month": 31,
   "balance_label": "Халва (другие карты ещё не добавлены)",
-  "month": {
-    "label": "Июль",
-    "income": 0,
-    "expense": 1339.83,
-    "savings": 0
+  "balance": 1402.13,
+  "categories": {
+    "income": [
+      { "name": "Пенсия", "plan": null },
+      { "name": "Премии", "plan": null },
+      { "name": "Доп доход", "plan": null },
+      { "name": "Другие источники", "plan": null }
+    ],
+    "mandatory": [
+      { "name": "Коммунальные платежи", "plan": null },
+      { "name": "Сотовая связь+Интернет", "plan": null },
+      { "name": "Продукты питания", "plan": null },
+      { "name": "Пром.товары", "plan": null },
+      { "name": "Транспорт", "plan": null },
+      { "name": "Здоровье + Красота", "plan": null }
+    ],
+    "optional": [
+      { "name": "Образование", "plan": null },
+      { "name": "Развлечения", "plan": null },
+      { "name": "Одежда/Обувь", "plan": null },
+      { "name": "Крупные покупки", "plan": null },
+      { "name": "Дом, сад и огород", "plan": null },
+      { "name": "Непредвиденные затраты", "plan": null }
+    ],
+    "savings": [
+      { "name": "Инвестиции", "plan": null },
+      { "name": "Отпуск", "plan": null }
+    ]
   },
-  "categories": [
-    { "name": "Еда", "amount": 1339.83 },
-    { "name": "Комуналка", "amount": 0 },
-    { "name": "Дорога", "amount": 0 },
-    { "name": "Хоз", "amount": 0 },
-    { "name": "Одежда", "amount": 0 },
-    { "name": "Красота и развлечения", "amount": 0 },
-    { "name": "Учёба", "amount": 0 },
-    { "name": "Подарки и прочее", "amount": 0 }
-  ],
-  "accounts": [
-    { "name": "Халва", "amount": 1402.13 }
-  ],
-  "recent": [
-    { "date": "14.07", "type": "expense", "category": "Еда", "note": "4 покупки", "amount": 1339.83 }
+  "operations": [
+    { "date": "2026-07-14", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 1339.83, "note": "4 покупки" }
   ]
 }
