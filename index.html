@@ -142,6 +142,56 @@
     return facts;
   }
 
+  function computeTotals(data, facts) {
+    var incomeTotal = 0;
+    data.categories.income.forEach(function (c) { incomeTotal += facts[c.name] || 0; });
+    var mandTotal = 0;
+    data.categories.mandatory.forEach(function (c) { mandTotal += facts[c.name] || 0; });
+    var optTotal = 0;
+    data.categories.optional.forEach(function (c) { optTotal += facts[c.name] || 0; });
+    var expenseTotal = mandTotal + optTotal;
+    var auto10 = Math.round(incomeTotal * 0.10 * 100) / 100;
+    var savingsTotal = auto10;
+    data.categories.savings.forEach(function (c) { savingsTotal += facts[c.name] || 0; });
+    var net = incomeTotal - expenseTotal - savingsTotal;
+    return { incomeTotal: incomeTotal, expenseTotal: expenseTotal, savingsTotal: savingsTotal, net: net };
+  }
+
+  var MONTH_NAMES = ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
+
+  function renderMonthSummary(totals) {
+    return '<table class="budget">' +
+      '<tr><td>Доходы</td><td>' + money(totals.incomeTotal) + '</td></tr>' +
+      '<tr><td>Расходы (вкл. накопления)</td><td>' + money(totals.expenseTotal + totals.savingsTotal) + '</td></tr>' +
+      '<tr class="grand"><td>САЛЬДО</td><td>' + money(totals.net) + '</td></tr>' +
+      '</table>';
+  }
+
+  function renderAnnualReport(data, totals) {
+    var report = data.annual_report || { current_month_index: new Date().getMonth(), archive: [] };
+    var archiveByIndex = {};
+    (report.archive || []).forEach(function (m) { archiveByIndex[m.index] = m; });
+
+    var rows = ['<tr><th style="text-align:left;">Месяц</th><th>Доходы</th><th>Расходы</th><th>Сальдо</th></tr>'];
+    var yearIncome = 0, yearExpense = 0;
+    for (var i = 0; i < 12; i++) {
+      var label = MONTH_NAMES[i];
+      if (i === report.current_month_index) {
+        yearIncome += totals.incomeTotal;
+        yearExpense += totals.expenseTotal + totals.savingsTotal;
+        rows.push('<tr><td style="text-align:left;">' + label + ' (текущий)</td><td>' + money(totals.incomeTotal) + '</td><td>' + money(totals.expenseTotal + totals.savingsTotal) + '</td><td>' + money(totals.net) + '</td></tr>');
+      } else if (archiveByIndex[i]) {
+        var m = archiveByIndex[i];
+        yearIncome += m.income; yearExpense += m.expense;
+        rows.push('<tr><td style="text-align:left;">' + label + '</td><td>' + money(m.income) + '</td><td>' + money(m.expense) + '</td><td>' + money(m.income - m.expense) + '</td></tr>');
+      } else {
+        rows.push('<tr><td style="text-align:left;" class="muted">' + label + '</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr>');
+      }
+    }
+    rows.push('<tr class="grand"><td style="text-align:left;">ИТОГО за год</td><td>' + money(yearIncome) + '</td><td>' + money(yearExpense) + '</td><td>' + money(yearIncome - yearExpense) + '</td></tr>');
+    return '<table class="budget">' + rows.join("") + '</table>';
+  }
+
   function renderBudgetTable(data, facts) {
     var rows = [];
     function catRow(c) {
@@ -284,8 +334,10 @@
         '<span class="balance-chip">' + (data.balance_label || "Баланс") + ': <b>' + money(data.balance) + '</b></span>' +
       '</div>' +
       '<div class="card"><h2>Бюджет месяца</h2>' + renderBudgetTable(data, facts) + '</div>' +
+      '<div class="card"><h2>Итоговый отчёт за месяц</h2>' + renderMonthSummary(computeTotals(data, facts)) + '</div>' +
       '<div class="card"><h2>По картам и счетам</h2><table class="budget">' + renderAccounts(data) + '</table></div>' +
       '<div class="card"><h2>По дням месяца</h2>' + renderDailyTable(data) + '</div>' +
+      '<div class="card"><h2>Годовой отчёт</h2>' + renderAnnualReport(data, computeTotals(data, facts)) + '</div>' +
       '<div class="card"><h2>Операции (на что потрачено)</h2>' + renderOps(data) + '</div>' +
       '<div class="placeholder" style="padding:8px 0;font-size:12px;">Обновлено: ' +
         new Date(data.updated_at).toLocaleString("ru-RU", {day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}) +
