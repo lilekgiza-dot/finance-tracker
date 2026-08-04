@@ -71,6 +71,7 @@
     { "date": "2026-08-03", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 32, "note": "маска для лица", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 99, "note": "оповещение Билайн", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 300, "note": "", "account": "Т-банк" },
-    { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 174, "note": "", "account": "Наличные" }
+    { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 174, "note": "", "account": "Наличные" },
+    { "date": "2026-08-01", "group": "optional", "category": "Развлечения", "type": "expense", "amount": 500, "note": "", "account": "Т-банк" }
   ]
 }
