@@ -19,6 +19,8 @@
     --border:         rgba(11,11,11,0.10);
     --good:           #0ca30c;
     --critical:       #d03b3b;
+    --good-tint:      rgba(12,163,12,0.10);
+    --critical-tint:  rgba(208,59,59,0.10);
     --accent:         #1baf7a;
     --accent-tint:    rgba(27,175,122,0.10);
     --group-head:     #f2f1ec;
@@ -34,6 +36,8 @@
       --border:         rgba(255,255,255,0.10);
       --good:           #0ca30c;
       --critical:       #e66767;
+      --good-tint:      rgba(12,163,12,0.16);
+      --critical-tint:  rgba(230,103,103,0.16);
       --accent:         #199e70;
       --accent-tint:    rgba(25,158,112,0.16);
       --group-head:     #232320;
@@ -78,6 +82,9 @@
   table.budget tr.group-head td { background: var(--group-head); font-weight: 700; }
   table.budget tr.subtotal td { font-weight: 700; border-top: 1px solid var(--muted); }
   table.budget tr.grand td { font-weight: 700; background: var(--accent-tint); color: var(--accent); }
+  table.budget tr.grand-good td { font-weight: 700; background: var(--good-tint); color: var(--good); }
+  table.budget tr.grand-bad td { font-weight: 700; background: var(--critical-tint); color: var(--critical); }
+  .cat-icon { margin-right: 6px; }
   table.budget td.dev-pos { color: var(--good); }
   table.budget td.dev-neg { color: var(--critical); }
   table.budget td.muted { color: var(--muted); }
@@ -126,6 +133,9 @@
     if (dev === null) return "muted";
     return dev >= 0 ? "dev-pos" : "dev-neg";
   }
+  function grandClass(n) {
+    return n >= 0 ? "grand-good" : "grand-bad";
+  }
 
   function computeFacts(data) {
     var facts = {};
@@ -163,7 +173,7 @@
     return '<table class="budget">' +
       '<tr><td>Доходы</td><td>' + money(totals.incomeTotal) + '</td></tr>' +
       '<tr><td>Расходы (вкл. накопления)</td><td>' + money(totals.expenseTotal + totals.savingsTotal) + '</td></tr>' +
-      '<tr class="grand"><td>САЛЬДО</td><td>' + money(totals.net) + '</td></tr>' +
+      '<tr class="' + grandClass(totals.net) + '"><td>САЛЬДО</td><td>' + money(totals.net) + '</td></tr>' +
       '</table>';
   }
 
@@ -188,8 +198,20 @@
         rows.push('<tr><td style="text-align:left;" class="muted">' + label + '</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr>');
       }
     }
-    rows.push('<tr class="grand"><td style="text-align:left;">ИТОГО за год</td><td>' + money(yearIncome) + '</td><td>' + money(yearExpense) + '</td><td>' + money(yearIncome - yearExpense) + '</td></tr>');
+    rows.push('<tr class="' + grandClass(yearIncome - yearExpense) + '"><td style="text-align:left;">ИТОГО за год</td><td>' + money(yearIncome) + '</td><td>' + money(yearExpense) + '</td><td>' + money(yearIncome - yearExpense) + '</td></tr>');
     return '<table class="budget">' + rows.join("") + '</table>';
+  }
+
+  var CAT_ICONS = {
+    "Пенсия": "🏦", "Премии": "🎁", "Доп доход": "💵", "Другие источники": "➕",
+    "Коммунальные платежи": "🏠", "Сотовая связь+Интернет": "📶", "Продукты питания": "🛒",
+    "Пром.товары": "🧴", "Транспорт": "🚌", "Здоровье + Красота": "💊",
+    "Образование": "📚", "Развлечения": "🎬", "Одежда/Обувь": "👗", "Крупные покупки": "🛋️",
+    "Дом, сад и огород": "🌱", "Непредвиденные затраты": "⚠️",
+    "Инвестиции": "📈", "Отпуск": "✈️"
+  };
+  function catIcon(name) {
+    return CAT_ICONS[name] ? '<span class="cat-icon">' + CAT_ICONS[name] + '</span>' : '';
   }
 
   function renderBudgetTable(data, facts) {
@@ -199,7 +221,7 @@
       var plan = c.plan;
       var dev = plan == null ? null : (plan - fact);
       rows.push(
-        '<tr><td>' + c.name + '</td>' +
+        '<tr><td>' + catIcon(c.name) + c.name + '</td>' +
         '<td class="muted">' + money(plan) + '</td>' +
         '<td>' + money(fact) + '</td>' +
         '<td class="' + devClass(dev) + '">' + (dev === null ? "—" : money(dev)) + '</td></tr>'
@@ -235,7 +257,7 @@
     rows.push('<tr class="subtotal"><td>ИТОГО РАСХОДЫ + НАКОПЛЕНИЯ</td><td></td><td>' + money(expenseTotal + savingsTotal) + '</td><td></td></tr>');
 
     var net = incomeTotal - expenseTotal - savingsTotal;
-    rows.push('<tr class="grand"><td>ЭКОНОМИЯ / ПЕРЕРАСХОД</td><td></td><td>' + money(net) + '</td><td></td></tr>');
+    rows.push('<tr class="' + grandClass(net) + '"><td>ЭКОНОМИЯ / ПЕРЕРАСХОД</td><td></td><td>' + money(net) + '</td><td></td></tr>');
 
     return '<table class="budget">' + rows.join("") + '</table>';
   }
@@ -268,7 +290,7 @@
       return '<tr>' + cells.join("") + '</tr>';
     }
     function catRow(name) {
-      var cells = ['<td>' + name + '</td>'];
+      var cells = ['<td>' + catIcon(name) + name + '</td>'];
       for (var d = 1; d <= days; d++) {
         var ops = dayOps[d][name];
         if (!ops || !ops.length) { cells.push('<td class="zero">·</td>'); continue; }
@@ -312,16 +334,18 @@
       return (
         '<div class="ops-row">' +
           '<span class="ops-date">' + dateShort + '</span>' +
-          '<span class="ops-cat">' + op.category + (noteLine ? '<div class="ops-note">' + noteLine + '</div>' : '') + '</span>' +
+          '<span class="ops-cat">' + catIcon(op.category) + op.category + (noteLine ? '<div class="ops-note">' + noteLine + '</div>' : '') + '</span>' +
           '<span class="' + amtClass + '">' + amtText + '</span>' +
         '</div>'
       );
     }).join("");
   }
 
+  var ACCOUNT_ICONS = { "Халва": "💜", "Т-банк": "💛", "Наличные": "💵", "Сбер": "💚", "Мир": "💳" };
   function renderAccounts(data) {
     return (data.accounts || []).map(function (a) {
-      return '<tr><td>' + a.name + '</td><td>' + money(a.amount) + '</td></tr>';
+      var icon = ACCOUNT_ICONS[a.name] ? '<span class="cat-icon">' + ACCOUNT_ICONS[a.name] + '</span>' : '';
+      return '<tr><td>' + icon + a.name + '</td><td>' + money(a.amount) + '</td></tr>';
     }).join("");
   }
 
