@@ -3,10 +3,12 @@
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
-  "balance_label": "Халва (другие карты ещё не добавлены)",
-  "balance": 1014.70,
+  "balance_label": "Итого по всем счетам",
+  "balance": 3288.70,
   "accounts": [
-    { "name": "Халва", "amount": 1014.70 }
+    { "name": "Т-банк", "amount": 776.48 },
+    { "name": "Халва", "amount": 193.22 },
+    { "name": "Наличные", "amount": 2319 }
   ],
   "bills": [
     { "name": "Кв. дом", "amount": 4000, "paid": false },
