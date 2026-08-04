@@ -4,11 +4,11 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 3171.98,
+  "balance": 2697.98,
   "accounts": [
-    { "name": "Т-банк", "amount": 3690.78 },
+    { "name": "Т-банк", "amount": 3390.78 },
     { "name": "Халва", "amount": -1837.80 },
-    { "name": "Наличные", "amount": 1319 }
+    { "name": "Наличные", "amount": 1145 }
   ],
   "bills": [
     { "name": "Кв. дом", "amount": 4000, "paid": false },
@@ -69,6 +69,8 @@
     { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "optional", "category": "Дом, сад и огород", "type": "expense", "amount": 611, "note": "шнек", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 32, "note": "маска для лица", "account": "Т-банк" },
-    { "date": "2026-08-03", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 99, "note": "оповещение Билайн", "account": "Т-банк" }
+    { "date": "2026-08-03", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 99, "note": "оповещение Билайн", "account": "Т-банк" },
+    { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 300, "note": "", "account": "Т-банк" },
+    { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 174, "note": "", "account": "Наличные" }
   ]
 }
