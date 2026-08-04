@@ -233,8 +233,8 @@
         '<button disabled>›</button>' +
       '</div>' +
       '<div class="period-tabs">' +
-        '<div class="tab">День</div><div class="tab">Неделя</div>' +
-        '<div class="tab active">Месяц</div><div class="tab">Год</div>' +
+        '<div class="tab" onclick="switchPeriodTab(this)">День</div><div class="tab" onclick="switchPeriodTab(this)">Неделя</div>' +
+        '<div class="tab active" onclick="switchPeriodTab(this)">Месяц</div><div class="tab" onclick="switchPeriodTab(this)">Год</div>' +
       '</div>'
     );
   }
@@ -271,11 +271,39 @@
     return '<div class="card"><h2>Категории</h2><div class="cat-hint">Нажми, чтобы открыть</div>' + rows + '</div>';
   }
 
+  var VIEW_KEYS = ["home", "ops", "bills", "notes", "settings"];
+  var VIEW_LABELS = ["Главная", "Операции", "Оплаты", "Заметки", "Настройки"];
+
   function renderBottomNav() {
-    var tabs = ["Главная", "Операции", "Оплаты", "Заметки", "Настройки"];
-    return '<div class="bottom-nav">' + tabs.map(function (t, i) {
-      return '<div class="tab' + (i === 0 ? ' active' : '') + '">' + t + '</div>';
+    return '<div class="bottom-nav">' + VIEW_LABELS.map(function (t, i) {
+      return '<div class="tab' + (i === 0 ? ' active' : '') + '" onclick="switchView(\'' + VIEW_KEYS[i] + '\')">' + t + '</div>';
     }).join("") + '</div>';
+  }
+
+  function renderBillsView(data) {
+    var bills = data.bills || [];
+    var unpaid = bills.filter(function (b) { return !b.paid; });
+    var paidSum = bills.filter(function (b) { return b.paid; }).reduce(function (s, b) { return s + b.amount; }, 0);
+    var unpaidSum = unpaid.reduce(function (s, b) { return s + b.amount; }, 0);
+    var list = bills.length
+      ? bills.map(function (b) {
+          return '<div class="cat-list-row" style="cursor:default;"><div class="head">' +
+            '<span class="icon">' + (b.paid ? "✅" : "🔲") + '</span>' +
+            '<span class="name">' + b.name + '</span>' +
+            '<span class="amt" style="color:' + (b.paid ? "var(--good)" : "#c98500") + '">' + money(b.amount) + '</span>' +
+            '</div></div>';
+        }).join("")
+      : '<div class="empty">Обязательных трат в этом месяце пока нет</div>';
+    return (
+      '<div class="card"><h2>Обязательные траты</h2>' +
+        '<div class="stat-grid" style="margin-top:0;">' +
+          '<div class="stat-card"><div class="lbl">Осталось оплатить</div><div class="val amber">' + money(unpaidSum) + '</div></div>' +
+          '<div class="stat-card"><div class="lbl">Оплачено</div><div class="val good">' + money(paidSum) + '</div></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card"><h2>Список</h2>' + list + '</div>' +
+      '<div class="empty">Добавить платёж можно, просто напиши мне сумму и на что</div>'
+    );
   }
 
   function renderAccounts(data) {
@@ -339,17 +367,46 @@
     var facts = computeFacts(data);
     var totals = computeTotals(data, facts);
     var app = document.getElementById("app");
+
+    var views = {
+      home: renderHero(data, totals) + renderCategoryList(data, facts),
+      ops: renderOps(data),
+      bills: renderBillsView(data),
+      notes: '<div class="card"><h2>Заметки</h2><div class="empty">Скоро — раздел ещё не готов</div></div>',
+      settings: renderAccounts(data) + renderAnnual(data, totals)
+    };
+
+    var viewsHtml = VIEW_KEYS.map(function (k) {
+      return '<div class="view" id="view-' + k + '" style="display:' + (k === "home" ? "block" : "none") + '">' + views[k] + '</div>';
+    }).join("");
+
     app.innerHTML =
       '<h1 style="font-size:20px;margin:4px 0 2px;">Касса</h1>' +
       '<div class="empty" style="text-align:left;padding:0 0 12px;">Финансовый месяц</div>' +
-      renderHero(data, totals) +
-      renderCategoryList(data, facts) +
-      renderAccounts(data) +
-      renderOps(data) +
-      renderAnnual(data, totals) +
+      viewsHtml +
       renderBottomNav() +
       '<div class="empty">Обновлено: ' + new Date(data.updated_at).toLocaleString("ru-RU", {day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}) + '</div>';
   }
+
+  window.switchView = function (key) {
+    VIEW_KEYS.forEach(function (k) {
+      var el = document.getElementById("view-" + k);
+      if (el) el.style.display = (k === key) ? "block" : "none";
+    });
+    document.querySelectorAll(".bottom-nav .tab").forEach(function (t, i) {
+      t.classList.toggle("active", VIEW_KEYS[i] === key);
+    });
+  };
+
+  window.switchPeriodTab = function (el) {
+    var row = el.parentElement;
+    row.querySelectorAll(".tab").forEach(function (t) { t.classList.remove("active"); });
+    el.classList.add("active");
+    if (el.textContent !== "Месяц") {
+      el.insertAdjacentHTML("afterend", "");
+      alert("Переключение по " + el.textContent.toLowerCase() + " пока не считает данные — это следующий шаг. Сейчас показан текущий месяц.");
+    }
+  };
 
   function showError() {
     document.getElementById("app").innerHTML = '<div class="placeholder">Не получилось загрузить данные.<br>Открой чуть позже.</div>';
