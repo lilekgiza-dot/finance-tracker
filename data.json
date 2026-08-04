@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 6742.87,
+  "balance": 5789.98,
   "accounts": [
     { "name": "Т-банк", "amount": 5060.78 },
-    { "name": "Халва", "amount": -636.91 },
+    { "name": "Халва", "amount": -1589.80 },
     { "name": "Наличные", "amount": 2319 }
   ],
   "bills": [
@@ -58,6 +58,10 @@
   },
   "operations": [
     { "date": "2026-08-01", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 633.95, "note": "изюм, хлеб, чернослив, молоко (Находка-550)", "account": "Халва" },
-    { "date": "2026-08-01", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 196.18, "note": "куры суповые", "account": "Халва" }
+    { "date": "2026-08-01", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 196.18, "note": "куры суповые", "account": "Халва" },
+    { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 405, "note": "масло, яйца, сахар (Чижик)", "account": "Халва" },
+    { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 299.89, "note": "маффин, сосиски (Пятёрочка)", "account": "Халва" },
+    { "date": "2026-08-04", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 194, "note": "приправы, специи (Чижик)", "account": "Халва" },
+    { "date": "2026-08-04", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 54, "note": "мороженое (Чижик)", "account": "Халва" }
   ]
 }
