@@ -76,6 +76,35 @@
   .hero-split .val.income { color: var(--good); }
   .hero-split .val.expense { color: var(--critical); }
 
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .stat-card { background: var(--page); border-radius: 14px; padding: 12px 14px; }
+  .stat-card .lbl { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .stat-card .val { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat-card .val.amber { color: #c98500; }
+  .stat-card .val.good { color: var(--good); }
+  .stat-card .val.income { color: var(--good); }
+  .stat-card .val.expense { color: var(--critical); }
+
+  .period-bar { text-align: center; font-size: 13px; color: var(--text-secondary); margin: 14px 0 10px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .period-bar button { border: none; background: none; font-size: 16px; color: var(--muted); cursor: pointer; padding: 2px 6px; }
+  .period-tabs { display: flex; background: var(--page); border-radius: 12px; padding: 3px; gap: 3px; }
+  .period-tabs .tab { flex: 1; text-align: center; padding: 8px 0; border-radius: 9px; font-size: 13px; cursor: pointer; color: var(--text-secondary); }
+  .period-tabs .tab.active { background: var(--accent-tint); color: var(--accent); font-weight: 600; }
+
+  .cat-list-row { border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; background: var(--page); cursor: pointer; }
+  .cat-list-row .head { display: flex; align-items: center; gap: 10px; }
+  .cat-list-row .head .icon { font-size: 18px; }
+  .cat-list-row .head .name { flex: 1; font-size: 14px; font-weight: 600; }
+  .cat-list-row .head .amt { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--critical); }
+  .cat-list-row .detail { max-height: 0; overflow: hidden; transition: max-height 0.2s ease; }
+  .cat-list-row.open .detail { max-height: 300px; margin-top: 8px; }
+  .cat-list-row .detail-row { font-size: 12px; color: var(--muted); padding: 3px 0; border-top: 1px solid var(--gridline); }
+  .cat-hint { text-align: right; font-size: 11px; color: var(--muted); margin: -6px 0 8px; }
+
+  .bottom-nav { display: flex; background: var(--page); border-radius: 14px; padding: 4px; gap: 2px; margin-top: 4px; }
+  .bottom-nav .tab { flex: 1; text-align: center; padding: 8px 2px; border-radius: 11px; font-size: 11px; color: var(--muted); }
+  .bottom-nav .tab.active { background: var(--accent-tint); color: var(--accent); font-weight: 600; }
+
   .donut-wrap { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
   .donut-legend { flex: 1; min-width: 180px; }
   .legend-row { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 13px; }
@@ -175,90 +204,78 @@
   }
 
   function renderHero(data, totals) {
+    var bills = data.bills || [];
+    var billsUnpaid = bills.filter(function (b) { return !b.paid; }).reduce(function (s, b) { return s + b.amount; }, 0);
+    var freeLeft = data.balance - billsUnpaid;
     return (
-      '<div class="card hero">' +
-        '<div class="label">' + (data.balance_label || "Баланс") + '</div>' +
-        '<div class="value">' + money(data.balance) + '</div>' +
-        '<div class="hero-split">' +
-          '<div class="item"><div class="lbl">Приход</div><div class="val income">' + money(totals.incomeTotal) + '</div></div>' +
-          '<div class="item"><div class="lbl">Расход</div><div class="val expense">' + money(totals.expenseTotal) + '</div></div>' +
+      '<div class="card hero" style="text-align:left;padding:18px;">' +
+        '<div class="label" style="text-align:center;">' + (data.balance_label || "Баланс") + '</div>' +
+        '<div class="value" style="text-align:center;">' + money(data.balance) + '</div>' +
+        '<div class="stat-grid">' +
+          '<div class="stat-card"><div class="lbl">Обязательные к оплате</div><div class="val amber">' + money(billsUnpaid) + '</div></div>' +
+          '<div class="stat-card"><div class="lbl">Свободный остаток</div><div class="val good">' + money(freeLeft) + '</div></div>' +
+          '<div class="stat-card"><div class="lbl">Доходы</div><div class="val income">+' + money(totals.incomeTotal) + '</div></div>' +
+          '<div class="stat-card"><div class="lbl">Расходы</div><div class="val expense">-' + money(totals.expenseTotal) + '</div></div>' +
         '</div>' +
+        renderPeriodBar(data) +
       '</div>'
     );
   }
 
-  function renderDonut(data, facts) {
-    var cats = allExpenseCategories(data)
-      .map(function (c) { return { name: c.name, amount: facts[c.name] || 0 }; })
-      .filter(function (c) { return c.amount > 0; })
-      .sort(function (a, b) { return b.amount - a.amount; });
-
-    if (!cats.length) {
-      return '<div class="card"><h2>По категориям</h2><div class="empty">Пока нет трат в этом месяце</div></div>';
-    }
-
-    var top = cats.slice(0, 6);
-    var rest = cats.slice(6);
-    var restSum = rest.reduce(function (s, c) { return s + c.amount; }, 0);
-    var slices = top.map(function (c, i) { return { name: c.name, amount: c.amount, color: SERIES[i] }; });
-    if (restSum > 0) slices.push({ name: "Остальное", amount: restSum, color: "var(--series-other)" });
-
-    var total = slices.reduce(function (s, c) { return s + c.amount; }, 0);
-    var r = 15.9155;
-    var circumference = 2 * Math.PI * r;
-    var offset = 0;
-    var arcs = slices.map(function (s) {
-      var frac = s.amount / total;
-      var dash = frac * circumference;
-      var circle = '<circle cx="21" cy="21" r="' + r + '" fill="transparent" stroke="' + s.color + '" stroke-width="5" ' +
-        'stroke-dasharray="' + dash.toFixed(2) + ' ' + (circumference - dash).toFixed(2) + '" ' +
-        'stroke-dashoffset="' + (-offset).toFixed(2) + '" />';
-      offset += dash;
-      return circle;
-    }).join("");
-
-    var legend = slices.map(function (s) {
-      var icon = CAT_ICONS[s.name] || "";
-      var pct = Math.round((s.amount / total) * 100);
-      return (
-        '<div class="legend-row">' +
-          '<span class="legend-dot" style="background:' + s.color + '"></span>' +
-          '<span class="legend-name">' + icon + ' ' + s.name + '</span>' +
-          '<span class="legend-pct">' + pct + '%</span>' +
-          '<span class="legend-amt">' + money(s.amount) + '</span>' +
-        '</div>'
-      );
-    }).join("");
-
+  function renderPeriodBar(data) {
+    var start = new Date(data.month_start + "T00:00:00");
+    var end = new Date(start.getFullYear(), start.getMonth() + 1, start.getDate() - 1);
+    function fmt(d) { return d.getDate() + " " + MONTH_GEN[d.getMonth()]; }
     return (
-      '<div class="card"><h2>По категориям</h2>' +
-        '<div class="donut-wrap">' +
-          '<svg width="140" height="140" viewBox="0 0 42 42">' + arcs + '</svg>' +
-          '<div class="donut-legend">' + legend + '</div>' +
-        '</div>' +
+      '<div class="period-bar">' +
+        '<button disabled>‹</button>' +
+        '<span>Фин. период: ' + fmt(start) + ' – ' + fmt(end) + ' ' + end.getFullYear() + ' г.</span>' +
+        '<button disabled>›</button>' +
+      '</div>' +
+      '<div class="period-tabs">' +
+        '<div class="tab">День</div><div class="tab">Неделя</div>' +
+        '<div class="tab active">Месяц</div><div class="tab">Год</div>' +
       '</div>'
     );
   }
 
-  function renderCategoryCards(data, facts) {
-    var cats = allExpenseCategories(data)
-      .map(function (c) { return { name: c.name, amount: facts[c.name] || 0 }; })
-      .filter(function (c) { return c.amount > 0; })
-      .sort(function (a, b) { return b.amount - a.amount; });
-    if (!cats.length) return "";
-    var max = cats[0].amount;
-    var cards = cats.map(function (c, i) {
-      var color = i < SERIES.length ? SERIES[i] : "var(--series-other)";
-      var pct = max ? Math.round((c.amount / max) * 100) : 0;
+  var MONTH_GEN = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+
+  function renderCategoryList(data, facts) {
+    var all = allExpenseCategories(data).map(function (c) { return { name: c.name, amount: facts[c.name] || 0 }; });
+    var withSpend = all.filter(function (c) { return c.amount > 0; }).sort(function (a, b) { return b.amount - a.amount; });
+    var rest = all.filter(function (c) { return c.amount === 0; });
+    var ordered = withSpend.concat(rest);
+
+    var rows = ordered.map(function (c, idx) {
+      var ops = data.operations.filter(function (o) { return o.category === c.name; })
+        .sort(function (a, b) { return b.date.localeCompare(a.date); });
+      var detail = ops.length
+        ? ops.map(function (o) {
+            var d = o.date.slice(8, 10) + "." + o.date.slice(5, 7);
+            return '<div class="detail-row">' + d + ' — ' + money(o.amount) + (o.note ? " · " + o.note : "") + (o.account ? " · " + o.account : "") + '</div>';
+          }).join("")
+        : '<div class="detail-row">Пока нет операций</div>';
       return (
-        '<div class="cat-card">' +
-          '<div class="top"><span class="icon">' + (CAT_ICONS[c.name] || "") + '</span><span class="amt">' + money(c.amount) + '</span></div>' +
-          '<div class="name">' + c.name + '</div>' +
-          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%;background:' + color + '"></div></div>' +
+        '<div class="cat-list-row" data-idx="' + idx + '" onclick="this.classList.toggle(\'open\')">' +
+          '<div class="head">' +
+            '<span class="icon">' + (CAT_ICONS[c.name] || "") + '</span>' +
+            '<span class="name">' + c.name + '</span>' +
+            '<span class="amt">' + (c.amount ? "-" + money(c.amount) : money(0)) + '</span>' +
+          '</div>' +
+          '<div class="detail">' + detail + '</div>' +
         '</div>'
       );
     }).join("");
-    return '<div class="card"><h2>Категории целиком</h2><div class="cat-grid">' + cards + '</div></div>';
+
+    return '<div class="card"><h2>Категории</h2><div class="cat-hint">Нажми, чтобы открыть</div>' + rows + '</div>';
+  }
+
+  function renderBottomNav() {
+    var tabs = ["Главная", "Операции", "Оплаты", "Заметки", "Настройки"];
+    return '<div class="bottom-nav">' + tabs.map(function (t, i) {
+      return '<div class="tab' + (i === 0 ? ' active' : '') + '">' + t + '</div>';
+    }).join("") + '</div>';
   }
 
   function renderAccounts(data) {
@@ -323,13 +340,14 @@
     var totals = computeTotals(data, facts);
     var app = document.getElementById("app");
     app.innerHTML =
-      '<h1 style="font-size:18px;margin:4px 0 14px;">' + data.month_label + '</h1>' +
+      '<h1 style="font-size:20px;margin:4px 0 2px;">Касса</h1>' +
+      '<div class="empty" style="text-align:left;padding:0 0 12px;">Финансовый месяц</div>' +
       renderHero(data, totals) +
-      renderDonut(data, facts) +
-      renderCategoryCards(data, facts) +
+      renderCategoryList(data, facts) +
       renderAccounts(data) +
       renderOps(data) +
       renderAnnual(data, totals) +
+      renderBottomNav() +
       '<div class="empty">Обновлено: ' + new Date(data.updated_at).toLocaleString("ru-RU", {day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}) + '</div>';
   }
 
