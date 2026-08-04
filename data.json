@@ -8,6 +8,7 @@
   "accounts": [
     { "name": "Халва", "amount": 1014.70 }
   ],
+  "bills": [],
   "annual_report": {
     "current_month_index": 7,
     "archive": [
