@@ -77,7 +77,8 @@
   .hero-split .val.expense { color: var(--critical); }
 
   .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-  .stat-card { background: var(--page); border-radius: 14px; padding: 12px 14px; }
+  .stat-card { background: var(--page); border-radius: 14px; padding: 12px 14px; cursor: pointer; }
+  .stat-card:active { opacity: 0.7; }
   .stat-card .lbl { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
   .stat-card .val { font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
   .stat-card .val.amber { color: #c98500; }
@@ -212,10 +213,10 @@
         '<div class="label" style="text-align:center;">' + (data.balance_label || "Баланс") + '</div>' +
         '<div class="value" style="text-align:center;">' + money(data.balance) + '</div>' +
         '<div class="stat-grid">' +
-          '<div class="stat-card"><div class="lbl">Обязательные к оплате</div><div class="val amber">' + money(billsUnpaid) + '</div></div>' +
-          '<div class="stat-card"><div class="lbl">Свободный остаток</div><div class="val good">' + money(freeLeft) + '</div></div>' +
-          '<div class="stat-card"><div class="lbl">Доходы</div><div class="val income">+' + money(totals.incomeTotal) + '</div></div>' +
-          '<div class="stat-card"><div class="lbl">Расходы</div><div class="val expense">-' + money(totals.expenseTotal) + '</div></div>' +
+          '<div class="stat-card" onclick="switchView(\'bills\')"><div class="lbl">Обязательные к оплате</div><div class="val amber">' + money(billsUnpaid) + '</div></div>' +
+          '<div class="stat-card" onclick="switchView(\'settings\')"><div class="lbl">Свободный остаток</div><div class="val good">' + money(freeLeft) + '</div></div>' +
+          '<div class="stat-card" onclick="switchView(\'ops\')"><div class="lbl">Доходы</div><div class="val income">+' + money(totals.incomeTotal) + '</div></div>' +
+          '<div class="stat-card" onclick="switchView(\'ops\')"><div class="lbl">Расходы</div><div class="val expense">-' + money(totals.expenseTotal) + '</div></div>' +
         '</div>' +
         renderPeriodBar(data) +
       '</div>'
