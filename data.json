@@ -8,7 +8,18 @@
   "accounts": [
     { "name": "Халва", "amount": 1014.70 }
   ],
-  "bills": [],
+  "bills": [
+    { "name": "Кв. дом", "amount": 4000, "paid": false },
+    { "name": "Телефон", "amount": 571, "paid": false },
+    { "name": "Т-банк обслуживание", "amount": 99, "paid": false },
+    { "name": "Интернет Wi-Fi", "amount": 1295, "paid": false },
+    { "name": "Комната", "amount": 5500, "paid": false },
+    { "name": "Дорога Октябрьский/Туймазы", "amount": 400, "paid": false },
+    { "name": "Еда (план на месяц)", "amount": 11000, "paid": false },
+    { "name": "Хоз", "amount": 1000, "paid": false },
+    { "name": "Здоровье", "amount": 5000, "paid": false },
+    { "name": "Вода", "amount": 630, "paid": false }
+  ],
   "annual_report": {
     "current_month_index": 7,
     "archive": [
