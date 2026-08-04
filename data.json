@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 2697.98,
+  "balance": 2787.99,
   "accounts": [
-    { "name": "Т-банк", "amount": 3390.78 },
-    { "name": "Халва", "amount": -1837.80 },
+    { "name": "Т-банк", "amount": 776.48 },
+    { "name": "Халва", "amount": 866.51 },
     { "name": "Наличные", "amount": 1145 }
   ],
   "bills": [
