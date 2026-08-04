@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 3288.70,
+  "balance": 2458.57,
   "accounts": [
     { "name": "Т-банк", "amount": 776.48 },
-    { "name": "Халва", "amount": 193.22 },
+    { "name": "Халва", "amount": -636.91 },
     { "name": "Наличные", "amount": 2319 }
   ],
   "bills": [
@@ -56,5 +56,8 @@
       { "name": "Отпуск", "plan": null }
     ]
   },
-  "operations": []
+  "operations": [
+    { "date": "2026-08-01", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 633.95, "note": "изюм, хлеб, чернослив, молоко (Находка-550)", "account": "Халва" },
+    { "date": "2026-08-01", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 196.18, "note": "куры суповые", "account": "Халва" }
+  ]
 }
