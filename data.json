@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-28T14:40:00+05:00",
-  "month_label": "Июль 2026",
-  "month_start": "2026-07-01",
+  "updated_at": "2026-08-04T09:48:00+05:00",
+  "month_label": "Август 2026",
+  "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Халва (другие карты ещё не добавлены)",
   "balance": 1014.70,
@@ -9,8 +9,10 @@
     { "name": "Халва", "amount": 1014.70 }
   ],
   "annual_report": {
-    "current_month_index": 6,
-    "archive": []
+    "current_month_index": 7,
+    "archive": [
+      { "index": 6, "income": 0, "expense": 2189.25 }
+    ]
   },
   "categories": {
     "income": [
@@ -40,11 +42,5 @@
       { "name": "Отпуск", "plan": null }
     ]
   },
-  "operations": [
-    { "date": "2026-07-14", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 1339.83, "note": "4 покупки", "account": "Халва" },
-    { "date": "2026-07-28", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 161.99, "note": "мороженое Магнат", "account": "Наличные" },
-    { "date": "2026-07-28", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 166.48, "note": "ряженка, мясо краба", "account": "Халва" },
-    { "date": "2026-07-28", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 220.95, "note": "хлеб, сырок, яйца, молоко", "account": "Халва" },
-    { "date": "2026-07-28", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 300, "note": "оплата связи", "account": "Т-банк" }
-  ]
+  "operations": []
 }
