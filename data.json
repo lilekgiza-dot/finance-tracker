@@ -4,11 +4,11 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 5789.98,
+  "balance": 3983.98,
   "accounts": [
-    { "name": "Т-банк", "amount": 5060.78 },
-    { "name": "Халва", "amount": -1589.80 },
-    { "name": "Наличные", "amount": 2319 }
+    { "name": "Т-банк", "amount": 4502.78 },
+    { "name": "Халва", "amount": -1837.80 },
+    { "name": "Наличные", "amount": 1319 }
   ],
   "bills": [
     { "name": "Кв. дом", "amount": 4000, "paid": false },
@@ -62,6 +62,9 @@
     { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 405, "note": "масло, яйца, сахар (Чижик)", "account": "Халва" },
     { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 299.89, "note": "маффин, сосиски (Пятёрочка)", "account": "Халва" },
     { "date": "2026-08-04", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 194, "note": "приправы, специи (Чижик)", "account": "Халва" },
-    { "date": "2026-08-04", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 54, "note": "мороженое (Чижик)", "account": "Халва" }
+    { "date": "2026-08-04", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 54, "note": "мороженое (Чижик)", "account": "Халва" },
+    { "date": "2026-08-01", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1000, "note": "массаж", "account": "Наличные" },
+    { "date": "2026-08-01", "group": "optional", "category": "Дом, сад и огород", "type": "expense", "amount": 558, "note": "крышки для консервации", "account": "Т-банк" },
+    { "date": "2026-08-01", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 248, "note": "фоторамка, зубной ополаскиватель", "account": "Халва" }
   ]
 }
