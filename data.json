@@ -45,7 +45,7 @@
     ],
     "optional": [
       { "name": "Образование", "plan": null },
-      { "name": "Развлечения", "plan": null },
+      { "name": "Развлечения, подарки", "plan": null },
       { "name": "Одежда/Обувь", "plan": null },
       { "name": "Крупные покупки", "plan": null },
       { "name": "Дом, сад и огород", "plan": null },
@@ -72,6 +72,6 @@
     { "date": "2026-08-03", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 99, "note": "оповещение Билайн", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 300, "note": "", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 174, "note": "", "account": "Наличные" },
-    { "date": "2026-08-01", "group": "optional", "category": "Развлечения", "type": "expense", "amount": 500, "note": "", "account": "Т-банк" }
+    { "date": "2026-08-01", "group": "optional", "category": "Развлечения, подарки", "type": "expense", "amount": 500, "note": "", "account": "Т-банк" }
   ]
 }
