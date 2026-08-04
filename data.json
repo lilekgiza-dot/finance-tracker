@@ -25,7 +25,7 @@
   "annual_report": {
     "current_month_index": 7,
     "archive": [
-      { "index": 6, "income": 0, "expense": 2189.25 }
+      { "index": 6, "income": 0, "expense": 0 }
     ]
   },
   "categories": {
