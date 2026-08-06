@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 2787.99,
+  "balance": 2479.56,
   "accounts": [
     { "name": "Т-банк", "amount": 776.48 },
-    { "name": "Халва", "amount": 866.51 },
+    { "name": "Халва", "amount": 558.08 },
     { "name": "Наличные", "amount": 1145 }
   ],
   "bills": [
@@ -72,6 +72,8 @@
     { "date": "2026-08-03", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 99, "note": "оповещение Билайн", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 300, "note": "", "account": "Т-банк" },
     { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 174, "note": "", "account": "Наличные" },
-    { "date": "2026-08-01", "group": "optional", "category": "Развлечения, подарки", "type": "expense", "amount": 500, "note": "", "account": "Т-банк" }
+    { "date": "2026-08-01", "group": "optional", "category": "Развлечения, подарки", "type": "expense", "amount": 500, "note": "", "account": "Т-банк" },
+    { "date": "2026-08-05", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 128.47, "note": "хлебцы, манка (Пятёрочка)", "account": "Халва" },
+    { "date": "2026-08-05", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 179.96, "note": "крекер, гвоздика, сырок (Находка-550)", "account": "Халва" }
   ]
 }
