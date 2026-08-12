@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 2501.00,
+  "balance": 2234.06,
   "accounts": [
     { "name": "Т-банк", "amount": 776.48 },
-    { "name": "Халва", "amount": 579.52 },
+    { "name": "Халва", "amount": 312.58 },
     { "name": "Наличные", "amount": 1145 }
   ],
   "bills": [
@@ -76,6 +76,8 @@
     { "date": "2026-08-05", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 128.47, "note": "хлебцы, манка (Пятёрочка)", "account": "Халва" },
     { "date": "2026-08-05", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 179.96, "note": "крекер, гвоздика, сырок (Находка-550)", "account": "Халва" },
     { "date": "2026-08-06", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 158.56, "note": "ряженка, творожные продукты (Пятёрочка)", "account": "Халва" },
-    { "date": "2026-08-06", "category": "Другие источники", "type": "income", "amount": 180, "note": "", "account": "Халва" }
+    { "date": "2026-08-06", "category": "Другие источники", "type": "income", "amount": 180, "note": "", "account": "Халва" },
+    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 59.98, "note": "хлеб, батон (Находка-550)", "account": "Халва" },
+    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 206.96, "note": "молоко, хлебцы (Пятёрочка)", "account": "Халва" }
   ]
 }
