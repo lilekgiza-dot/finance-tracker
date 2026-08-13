@@ -6,8 +6,8 @@
   "balance_label": "Итого по всем счетам",
   "balance": 2804.83,
   "accounts": [
-    { "name": "Т-банк", "amount": 1852.08 },
-    { "name": "Халва", "amount": 707.75 },
+    { "name": "Т-банк", "amount": 1802.08 },
+    { "name": "Халва", "amount": 757.75 },
     { "name": "Наличные", "amount": 245 }
   ],
   "bills": [
