@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-13T15:30:00+05:00",
+  "updated_at": "2026-08-13T18:35:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 2847.22,
+  "balance": 2304.83,
   "accounts": [
-    { "name": "Т-банк", "amount": 1847.48 },
-    { "name": "Халва", "amount": 754.74 },
+    { "name": "Т-банк", "amount": 1352.08 },
+    { "name": "Халва", "amount": 707.75 },
     { "name": "Наличные", "amount": 245 }
   ],
   "bills": [
@@ -89,6 +89,8 @@
     { "date": "2026-08-11", "group": "optional", "category": "Развлечения, подарки", "type": "expense", "amount": 500, "note": "подарок", "account": "Т-банк" },
     { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1468, "note": "НЛ", "account": "Халва" },
     { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 154.97, "note": "яйца, мука пшеничная (Пятёрочка)", "account": "Халва" },
-    { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 80.87, "note": "мука, соль гималайская, соль поваренная (Магнит)", "account": "Халва" }
+    { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 80.87, "note": "мука, соль гималайская, соль поваренная (Магнит)", "account": "Халва" },
+    { "date": "2026-08-13", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 46.99, "note": "яйцо куриное (Красное&Белое)", "account": "Халва" },
+    { "date": "2026-08-13", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 495.40, "note": "Порталак сироп (аптека)", "account": "Т-банк" }
   ]
 }
