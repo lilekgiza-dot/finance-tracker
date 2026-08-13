@@ -4,9 +4,9 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 2304.83,
+  "balance": 2804.83,
   "accounts": [
-    { "name": "Т-банк", "amount": 1352.08 },
+    { "name": "Т-банк", "amount": 1852.08 },
     { "name": "Халва", "amount": 707.75 },
     { "name": "Наличные", "amount": 245 }
   ],
@@ -86,7 +86,6 @@
     { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 82, "note": "патчи", "account": "Т-банк" },
     { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 754, "note": "сметана, творог, масло сливочное, ароматизатор (Чижик)", "account": "Халва" },
     { "date": "2026-08-10", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 377, "note": "Но-шпа, никотиновая кислота (аптека)", "account": "Т-банк" },
-    { "date": "2026-08-11", "group": "optional", "category": "Развлечения, подарки", "type": "expense", "amount": 500, "note": "подарок", "account": "Т-банк" },
     { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1468, "note": "НЛ", "account": "Халва" },
     { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 154.97, "note": "яйца, мука пшеничная (Пятёрочка)", "account": "Халва" },
     { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 80.87, "note": "мука, соль гималайская, соль поваренная (Магнит)", "account": "Халва" },
