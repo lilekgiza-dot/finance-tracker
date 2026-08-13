@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-04T09:48:00+05:00",
+  "updated_at": "2026-08-13T13:43:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 2234.06,
+  "balance": 4551.06,
   "accounts": [
-    { "name": "Т-банк", "amount": 776.48 },
-    { "name": "Халва", "amount": 312.58 },
-    { "name": "Наличные", "amount": 1145 }
+    { "name": "Т-банк", "amount": 1847.48 },
+    { "name": "Халва", "amount": 2458.58 },
+    { "name": "Наличные", "amount": 245 }
   ],
   "bills": [
     { "name": "Кв. дом", "amount": 4000, "paid": false },
@@ -78,6 +78,14 @@
     { "date": "2026-08-06", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 158.56, "note": "ряженка, творожные продукты (Пятёрочка)", "account": "Халва" },
     { "date": "2026-08-06", "category": "Другие источники", "type": "income", "amount": 180, "note": "", "account": "Халва" },
     { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 59.98, "note": "хлеб, батон (Находка-550)", "account": "Халва" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 206.96, "note": "молоко, хлебцы (Пятёрочка)", "account": "Халва" }
+    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 206.96, "note": "молоко, хлебцы (Пятёрочка)", "account": "Халва" },
+    { "date": "2026-08-06", "category": "Другие источники", "type": "income", "amount": 5000, "note": "", "account": "Т-банк" },
+    { "date": "2026-08-06", "category": "Другие источники", "type": "income", "amount": 100, "note": "", "account": "Наличные" },
+    { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1000, "note": "йога", "account": "Наличные" },
+    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
+    { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 82, "note": "патчи", "account": "Т-банк" },
+    { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 754, "note": "сметана, творог, масло сливочное, ароматизатор (Чижик)", "account": "Халва" },
+    { "date": "2026-08-10", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 377, "note": "Но-шпа, никотиновая кислота (аптека)", "account": "Т-банк" },
+    { "date": "2026-08-11", "group": "optional", "category": "Развлечения, подарки", "type": "expense", "amount": 500, "note": "подарок", "account": "Т-банк" }
   ]
 }
