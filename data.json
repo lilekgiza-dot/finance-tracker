@@ -4,9 +4,9 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 1234.83,
+  "balance": 1197.83,
   "accounts": [
-    { "name": "Т-банк", "amount": 232.08 },
+    { "name": "Т-банк", "amount": 195.08 },
     { "name": "Халва", "amount": 757.75 },
     { "name": "Наличные", "amount": 245 }
   ],
@@ -92,6 +92,7 @@
     { "date": "2026-08-13", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 46.99, "note": "яйцо куриное (Красное&Белое)", "account": "Халва" },
     { "date": "2026-08-13", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 495.40, "note": "Порталак сироп (аптека)", "account": "Т-банк" },
     { "date": "2026-08-11", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1500, "note": "лазер", "account": "Т-банк" },
-    { "date": "2026-08-11", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" }
+    { "date": "2026-08-11", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
+    { "date": "2026-08-11", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 37, "note": "подставка для телефона", "account": "Т-банк" }
   ]
 }
