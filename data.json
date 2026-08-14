@@ -96,6 +96,8 @@
     { "date": "2026-08-09", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 278, "note": "порошок для туалетов/выгребных ям, влажные салфетки, мыло хоз (АТОЛ)", "account": "Халва" },
     { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 183, "note": "б-продукты (Залифа)", "account": "Халва" },
     { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 149.69, "note": "сосиски (Красное&Белое)", "account": "Халва" },
-    { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 82, "note": "сверка баланса Халвы", "account": "Халва" }
+    { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 82, "note": "сверка баланса Халвы", "account": "Халва" },
+    { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 500, "note": "с другого счёта", "account": "Т-банк" },
+    { "date": "2026-08-14", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 500, "note": "Билайн", "account": "Т-банк" }
   ]
 }
