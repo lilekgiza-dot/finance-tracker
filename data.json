@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 489.14,
+  "balance": 1439.74,
   "accounts": [
     { "name": "Т-банк", "amount": 195.08 },
-    { "name": "Халва", "amount": 49.06 },
+    { "name": "Халва", "amount": 999.66 },
     { "name": "Наличные", "amount": 245 }
   ],
   "bills": [
@@ -98,6 +98,9 @@
     { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 149.69, "note": "сосиски (Красное&Белое)", "account": "Халва" },
     { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 82, "note": "сверка баланса Халвы", "account": "Халва" },
     { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 500, "note": "с другого счёта", "account": "Т-банк" },
-    { "date": "2026-08-14", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 500, "note": "Билайн", "account": "Т-банк" }
+    { "date": "2026-08-14", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 500, "note": "Билайн", "account": "Т-банк" },
+    { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 3840, "note": "пополнение", "account": "Халва" },
+    { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 2301.60, "note": "квартплата", "account": "Халва" },
+    { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 587.80, "note": "газ", "account": "Халва" }
   ]
 }
