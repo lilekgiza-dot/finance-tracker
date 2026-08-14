@@ -4,9 +4,9 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 1439.74,
+  "balance": 21409.15,
   "accounts": [
-    { "name": "Т-банк", "amount": 195.08 },
+    { "name": "Т-банк", "amount": 20164.49 },
     { "name": "Халва", "amount": 999.66 },
     { "name": "Наличные", "amount": 245 }
   ],
@@ -101,6 +101,7 @@
     { "date": "2026-08-14", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 500, "note": "Билайн", "account": "Т-банк" },
     { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 3840, "note": "пополнение", "account": "Халва" },
     { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 2301.60, "note": "квартплата", "account": "Халва" },
-    { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 587.80, "note": "газ", "account": "Халва" }
+    { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 587.80, "note": "газ", "account": "Халва" },
+    { "date": "2026-08-14", "category": "Пенсия", "type": "income", "amount": 19969.41, "note": "", "account": "Т-банк" }
   ]
 }
