@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 21996.80,
+  "balance": 20306.80,
   "accounts": [
     { "name": "Т-банк", "amount": 16119.49 },
-    { "name": "Халва", "amount": 5632.31 },
+    { "name": "Халва", "amount": 3942.31 },
     { "name": "Наличные", "amount": 245 }
   ],
   "bills": [
@@ -109,6 +109,7 @@
     { "date": "2026-08-16", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 718, "note": "фильтр для воды", "account": "Т-банк" },
     { "date": "2026-08-16", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 197, "note": "таблетница", "account": "Т-банк" },
     { "date": "2026-08-16", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
-    { "date": "2026-08-16", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 670, "note": "Уфанет", "account": "Т-банк" }
+    { "date": "2026-08-16", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 670, "note": "Уфанет", "account": "Т-банк" },
+    { "date": "2026-08-16", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1690, "note": "НЛ", "account": "Халва" }
   ]
 }
