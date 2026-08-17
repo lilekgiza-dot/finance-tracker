@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 19851.80,
+  "balance": 22599.80,
   "accounts": [
-    { "name": "Т-банк", "amount": 18664.49 },
-    { "name": "Халва", "amount": 942.31 },
+    { "name": "Т-банк", "amount": 16722.49 },
+    { "name": "Халва", "amount": 5632.31 },
     { "name": "Наличные", "amount": 245 }
   ],
   "bills": [
@@ -103,6 +103,12 @@
     { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 2301.60, "note": "квартплата", "account": "Халва" },
     { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 587.80, "note": "газ", "account": "Халва" },
     { "date": "2026-08-14", "category": "Пенсия", "type": "income", "amount": 19969.41, "note": "", "account": "Т-банк" },
-    { "date": "2026-08-14", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 1557.35, "note": "форель стейк, молоко, хлеб карельский/белый, сырок творожный (Находка-550)", "account": "Халва" }
+    { "date": "2026-08-14", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 1557.35, "note": "форель стейк, молоко, хлеб карельский/белый, сырок творожный (Находка-550)", "account": "Халва" },
+    { "date": "2026-08-14", "category": "Инвестиции", "type": "expense", "amount": 600, "note": "перевод в накопления", "account": "Халва" },
+    { "date": "2026-08-15", "category": "Другие источники", "type": "income", "amount": 3800, "note": "от Вани", "account": "Т-банк" },
+    { "date": "2026-08-16", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 718, "note": "фильтр для воды", "account": "Т-банк" },
+    { "date": "2026-08-16", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 197, "note": "таблетница", "account": "Т-банк" },
+    { "date": "2026-08-16", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
+    { "date": "2026-08-16", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 67, "note": "Уфанет", "account": "Т-банк" }
   ]
 }
