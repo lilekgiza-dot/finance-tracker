@@ -4,10 +4,10 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 19268.96,
+  "balance": 16388.96,
   "accounts": [
     { "name": "Т-банк", "amount": 16119.49 },
-    { "name": "Халва", "amount": 2904.47 },
+    { "name": "Халва", "amount": 24.47 },
     { "name": "Наличные", "amount": 245 }
   ],
   "bills": [
@@ -113,6 +113,7 @@
     { "date": "2026-08-16", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1690, "note": "НЛ", "account": "Халва" },
     { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 557, "note": "сыр, масло крестьянское (Чижик)", "account": "Халва" },
     { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 207, "note": "сахар, ряженка (Чижик)", "account": "Халва" },
-    { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 273.84, "note": "голень замороженная (Инаюшкин)", "account": "Халва" }
+    { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 273.84, "note": "голень замороженная (Инаюшкин)", "account": "Халва" },
+    { "date": "2026-08-17", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 2880, "note": "анализы МедиаЛаб (кровь, B12, натрий/калий/хлор, гомоцистеин)", "account": "Халва" }
   ]
 }
