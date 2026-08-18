@@ -4,11 +4,11 @@
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 16363.96,
+  "balance": 8443.06,
   "accounts": [
-    { "name": "Т-банк", "amount": 15519.49 },
+    { "name": "Т-банк", "amount": 7648.59 },
     { "name": "Халва", "amount": 24.47 },
-    { "name": "Наличные", "amount": 820 }
+    { "name": "Наличные", "amount": 770 }
   ],
   "bills": [
     { "name": "Кв. дом", "amount": 4000, "paid": false },
@@ -116,6 +116,8 @@
     { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 273.84, "note": "голень замороженная (Инаюшкин)", "account": "Халва" },
     { "date": "2026-08-17", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 2880, "note": "анализы МедиаЛаб (кровь, B12, натрий/калий/хлор, гомоцистеин)", "account": "Халва" },
     { "date": "2026-08-16", "category": "Доп доход", "type": "income", "amount": 225, "note": "продажа овощей", "account": "Наличные" },
-    { "date": "2026-08-17", "category": "Доп доход", "type": "income", "amount": 350, "note": "хаер", "account": "Наличные" }
+    { "date": "2026-08-17", "category": "Доп доход", "type": "income", "amount": 300, "note": "хаер", "account": "Наличные" },
+    { "date": "2026-08-18", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 1200.90, "note": "кв. дом", "account": "Т-банк" },
+    { "date": "2026-08-18", "group": "optional", "category": "Образование", "type": "expense", "amount": 6670, "note": "обучение ИИ", "account": "Т-банк" }
   ]
 }
