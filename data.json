@@ -1,123 +1,770 @@
 {
-  "updated_at": "2026-08-13T18:35:00+05:00",
+  "updated_at": "2026-08-21T12:55:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
   "balance": 8443.06,
   "accounts": [
-    { "name": "Т-банк", "amount": 7648.59 },
-    { "name": "Халва", "amount": 24.47 },
-    { "name": "Наличные", "amount": 770 }
+    {
+      "name": "Т-банк",
+      "amount": 7648.59
+    },
+    {
+      "name": "Халва",
+      "amount": 24.47
+    },
+    {
+      "name": "Наличные",
+      "amount": 770
+    }
   ],
   "bills": [
-    { "name": "Кв. дом", "amount": 4000, "paid": false },
-    { "name": "Телефон", "amount": 571, "paid": false },
-    { "name": "Т-банк обслуживание", "amount": 99, "paid": false },
-    { "name": "Интернет Wi-Fi", "amount": 1295, "paid": false },
-    { "name": "Комната", "amount": 5500, "paid": false },
-    { "name": "Дорога (Октябрьский/Туймазы + по городу)", "amount": 400, "paid": false },
-    { "name": "Еда (план на месяц)", "amount": 11000, "paid": false },
-    { "name": "Хоз", "amount": 1000, "paid": false },
-    { "name": "Здоровье", "amount": 5000, "paid": false },
-    { "name": "Вода", "amount": 630, "paid": false }
+    {
+      "name": "Кв. дом",
+      "amount": 4000,
+      "paid": false
+    },
+    {
+      "name": "Телефон",
+      "amount": 571,
+      "paid": false
+    },
+    {
+      "name": "Т-банк обслуживание",
+      "amount": 99,
+      "paid": false
+    },
+    {
+      "name": "Интернет Wi-Fi",
+      "amount": 1295,
+      "paid": false
+    },
+    {
+      "name": "Комната",
+      "amount": 5500,
+      "paid": false
+    },
+    {
+      "name": "Дорога (Октябрьский/Туймазы + по городу)",
+      "amount": 400,
+      "paid": false
+    },
+    {
+      "name": "Еда (план на месяц)",
+      "amount": 11000,
+      "paid": false
+    },
+    {
+      "name": "Хоз",
+      "amount": 1000,
+      "paid": false
+    },
+    {
+      "name": "Здоровье",
+      "amount": 5000,
+      "paid": false
+    },
+    {
+      "name": "Вода",
+      "amount": 630,
+      "paid": false
+    }
   ],
   "annual_report": {
     "current_month_index": 7,
     "archive": [
-      { "index": 6, "income": 0, "expense": 0 }
+      {
+        "index": 6,
+        "income": 0,
+        "expense": 0
+      }
     ]
   },
   "categories": {
     "income": [
-      { "name": "Пенсия", "plan": null },
-      { "name": "Премии", "plan": null },
-      { "name": "Доп доход", "plan": null },
-      { "name": "Другие источники", "plan": null }
+      {
+        "name": "Пенсия",
+        "plan": null
+      },
+      {
+        "name": "Премии",
+        "plan": null
+      },
+      {
+        "name": "Доп доход",
+        "plan": null
+      },
+      {
+        "name": "Другие источники",
+        "plan": null
+      }
     ],
     "mandatory": [
-      { "name": "Коммунальные платежи", "plan": null },
-      { "name": "Сотовая связь+Интернет", "plan": null },
-      { "name": "Продукты питания", "plan": null },
-      { "name": "Пром.товары", "plan": null },
-      { "name": "Транспорт", "plan": null },
-      { "name": "Здоровье + Красота", "plan": null }
+      {
+        "name": "Коммунальные платежи",
+        "plan": null
+      },
+      {
+        "name": "Сотовая связь+Интернет",
+        "plan": null
+      },
+      {
+        "name": "Продукты питания",
+        "plan": null
+      },
+      {
+        "name": "Пром.товары",
+        "plan": null
+      },
+      {
+        "name": "Транспорт",
+        "plan": null
+      },
+      {
+        "name": "Здоровье + Красота",
+        "plan": null
+      }
     ],
     "optional": [
-      { "name": "Образование", "plan": null },
-      { "name": "Развлечения, подарки", "plan": null },
-      { "name": "Одежда/Обувь", "plan": null },
-      { "name": "Крупные покупки", "plan": null },
-      { "name": "Дом, сад и огород", "plan": null },
-      { "name": "Непредвиденные затраты", "plan": null }
+      {
+        "name": "Образование",
+        "plan": null
+      },
+      {
+        "name": "Развлечения, подарки",
+        "plan": null
+      },
+      {
+        "name": "Одежда/Обувь",
+        "plan": null
+      },
+      {
+        "name": "Крупные покупки",
+        "plan": null
+      },
+      {
+        "name": "Дом, сад и огород",
+        "plan": null
+      },
+      {
+        "name": "Непредвиденные затраты",
+        "plan": null
+      }
     ],
     "savings": [
-      { "name": "Инвестиции", "plan": null },
-      { "name": "Отпуск", "plan": null }
+      {
+        "name": "Инвестиции",
+        "plan": null
+      },
+      {
+        "name": "Отпуск",
+        "plan": null
+      }
     ]
   },
   "operations": [
-    { "date": "2026-08-01", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 633.95, "note": "изюм, хлеб, чернослив, молоко (Находка-550)", "account": "Халва" },
-    { "date": "2026-08-01", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 196.18, "note": "куры суповые", "account": "Халва" },
-    { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 405, "note": "масло, яйца, сахар (Чижик)", "account": "Халва" },
-    { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 299.89, "note": "маффин, сосиски (Пятёрочка)", "account": "Халва" },
-    { "date": "2026-08-04", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 194, "note": "приправы, специи (Чижик)", "account": "Халва" },
-    { "date": "2026-08-04", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 54, "note": "мороженое (Чижик)", "account": "Халва" },
-    { "date": "2026-08-01", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1000, "note": "массаж", "account": "Наличные" },
-    { "date": "2026-08-01", "group": "optional", "category": "Дом, сад и огород", "type": "expense", "amount": 558, "note": "крышки для консервации", "account": "Т-банк" },
-    { "date": "2026-08-01", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 248, "note": "фоторамка, зубной ополаскиватель", "account": "Халва" },
-    { "date": "2026-08-03", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
-    { "date": "2026-08-03", "group": "optional", "category": "Дом, сад и огород", "type": "expense", "amount": 611, "note": "шнек", "account": "Т-банк" },
-    { "date": "2026-08-03", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 32, "note": "маска для лица", "account": "Т-банк" },
-    { "date": "2026-08-03", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 99, "note": "оповещение Билайн", "account": "Т-банк" },
-    { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 300, "note": "", "account": "Т-банк" },
-    { "date": "2026-08-03", "group": "optional", "category": "Непредвиденные затраты", "type": "expense", "amount": 174, "note": "", "account": "Наличные" },
-    { "date": "2026-08-01", "group": "optional", "category": "Развлечения, подарки", "type": "expense", "amount": 500, "note": "", "account": "Т-банк" },
-    { "date": "2026-08-05", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 128.47, "note": "хлебцы, манка (Пятёрочка)", "account": "Халва" },
-    { "date": "2026-08-05", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 179.96, "note": "крекер, гвоздика, сырок (Находка-550)", "account": "Халва" },
-    { "date": "2026-08-06", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 158.56, "note": "ряженка, творожные продукты (Пятёрочка)", "account": "Халва" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 59.98, "note": "хлеб, батон (Находка-550)", "account": "Халва" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 206.96, "note": "молоко, хлебцы (Пятёрочка)", "account": "Халва" },
-    { "date": "2026-08-06", "category": "Другие источники", "type": "income", "amount": 5000, "note": "", "account": "Т-банк" },
-    { "date": "2026-08-06", "category": "Другие источники", "type": "income", "amount": 100, "note": "", "account": "Наличные" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1000, "note": "йога", "account": "Наличные" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 82, "note": "патчи", "account": "Т-банк" },
-    { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 754, "note": "сметана, творог, масло сливочное, ароматизатор (Чижик)", "account": "Халва" },
-    { "date": "2026-08-10", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 377, "note": "Но-шпа, никотиновая кислота (аптека)", "account": "Т-банк" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1468, "note": "НЛ", "account": "Халва" },
-    { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 154.97, "note": "яйца, мука пшеничная (Пятёрочка)", "account": "Халва" },
-    { "date": "2026-08-10", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 80.87, "note": "мука, соль гималайская, соль поваренная (Магнит)", "account": "Халва" },
-    { "date": "2026-08-13", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 46.99, "note": "яйцо куриное (Красное&Белое)", "account": "Халва" },
-    { "date": "2026-08-13", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 495.40, "note": "Порталак сироп (аптека)", "account": "Т-банк" },
-    { "date": "2026-08-11", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1500, "note": "лазер", "account": "Т-банк" },
-    { "date": "2026-08-11", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
-    { "date": "2026-08-11", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 37, "note": "подставка для телефона", "account": "Т-банк" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 278, "note": "порошок для туалетов/выгребных ям, влажные салфетки, мыло хоз (АТОЛ)", "account": "Халва" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 183, "note": "б-продукты (Залифа)", "account": "Халва" },
-    { "date": "2026-08-09", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 149.69, "note": "сосиски (Красное&Белое)", "account": "Халва" },
-    { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 82, "note": "сверка баланса Халвы", "account": "Халва" },
-    { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 500, "note": "с другого счёта", "account": "Т-банк" },
-    { "date": "2026-08-14", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 500, "note": "Билайн", "account": "Т-банк" },
-    { "date": "2026-08-14", "category": "Другие источники", "type": "income", "amount": 3840, "note": "пополнение", "account": "Халва" },
-    { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 2301.60, "note": "квартплата", "account": "Халва" },
-    { "date": "2026-08-14", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 587.80, "note": "газ", "account": "Халва" },
-    { "date": "2026-08-14", "category": "Пенсия", "type": "income", "amount": 19969.41, "note": "", "account": "Т-банк" },
-    { "date": "2026-08-14", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 1557.35, "note": "форель стейк, молоко, хлеб карельский/белый, сырок творожный (Находка-550)", "account": "Халва" },
-    { "date": "2026-08-14", "category": "Инвестиции", "type": "expense", "amount": 600, "note": "перевод в накопления (счёт внутри Т-банка)", "account": "Т-банк" },
-    { "date": "2026-08-15", "category": "Другие источники", "type": "income", "amount": 3800, "note": "от Вани", "account": "Т-банк" },
-    { "date": "2026-08-16", "group": "mandatory", "category": "Пром.товары", "type": "expense", "amount": 718, "note": "фильтр для воды", "account": "Т-банк" },
-    { "date": "2026-08-16", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 197, "note": "таблетница", "account": "Т-банк" },
-    { "date": "2026-08-16", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 70, "note": "вода", "account": "Т-банк" },
-    { "date": "2026-08-16", "group": "mandatory", "category": "Сотовая связь+Интернет", "type": "expense", "amount": 670, "note": "Уфанет", "account": "Т-банк" },
-    { "date": "2026-08-16", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 1690, "note": "НЛ", "account": "Халва" },
-    { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 557, "note": "сыр, масло крестьянское (Чижик)", "account": "Халва" },
-    { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 207, "note": "сахар, ряженка (Чижик)", "account": "Халва" },
-    { "date": "2026-08-17", "group": "mandatory", "category": "Продукты питания", "type": "expense", "amount": 273.84, "note": "голень замороженная (Инаюшкин)", "account": "Халва" },
-    { "date": "2026-08-17", "group": "mandatory", "category": "Здоровье + Красота", "type": "expense", "amount": 2880, "note": "анализы МедиаЛаб (кровь, B12, натрий/калий/хлор, гомоцистеин)", "account": "Халва" },
-    { "date": "2026-08-16", "category": "Доп доход", "type": "income", "amount": 225, "note": "продажа овощей", "account": "Наличные" },
-    { "date": "2026-08-17", "category": "Доп доход", "type": "income", "amount": 300, "note": "хаер", "account": "Наличные" },
-    { "date": "2026-08-18", "group": "mandatory", "category": "Коммунальные платежи", "type": "expense", "amount": 1200.90, "note": "кв. дом", "account": "Т-банк" },
-    { "date": "2026-08-18", "group": "optional", "category": "Образование", "type": "expense", "amount": 6670, "note": "обучение ИИ", "account": "Т-банк" }
+    {
+      "date": "2026-08-01",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 633.95,
+      "note": "изюм, хлеб, чернослив, молоко (Находка-550)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-01",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 196.18,
+      "note": "куры суповые",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 405,
+      "note": "масло, яйца, сахар (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 299.89,
+      "note": "маффин, сосиски (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-04",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 194,
+      "note": "приправы, специи (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-04",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 54,
+      "note": "мороженое (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-01",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 1000,
+      "note": "массаж",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-01",
+      "group": "optional",
+      "category": "Дом, сад и огород",
+      "type": "expense",
+      "amount": 558,
+      "note": "крышки для консервации",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-01",
+      "group": "mandatory",
+      "category": "Пром.товары",
+      "type": "expense",
+      "amount": 248,
+      "note": "фоторамка, зубной ополаскиватель",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 70,
+      "note": "вода",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "optional",
+      "category": "Дом, сад и огород",
+      "type": "expense",
+      "amount": 611,
+      "note": "шнек",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 32,
+      "note": "маска для лица",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "mandatory",
+      "category": "Сотовая связь+Интернет",
+      "type": "expense",
+      "amount": 99,
+      "note": "оповещение Билайн",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "optional",
+      "category": "Непредвиденные затраты",
+      "type": "expense",
+      "amount": 300,
+      "note": "",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-03",
+      "group": "optional",
+      "category": "Непредвиденные затраты",
+      "type": "expense",
+      "amount": 174,
+      "note": "",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-01",
+      "group": "optional",
+      "category": "Развлечения, подарки",
+      "type": "expense",
+      "amount": 500,
+      "note": "",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-05",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 128.47,
+      "note": "хлебцы, манка (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-05",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 179.96,
+      "note": "крекер, гвоздика, сырок (Находка-550)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-06",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 158.56,
+      "note": "ряженка, творожные продукты (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 59.98,
+      "note": "хлеб, батон (Находка-550)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 206.96,
+      "note": "молоко, хлебцы (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "Другие источники",
+      "type": "income",
+      "amount": 5000,
+      "note": "",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "Другие источники",
+      "type": "income",
+      "amount": 100,
+      "note": "",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 1000,
+      "note": "йога",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 70,
+      "note": "вода",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 82,
+      "note": "патчи",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-10",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 754,
+      "note": "сметана, творог, масло сливочное, ароматизатор (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-10",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 377,
+      "note": "Но-шпа, никотиновая кислота (аптека)",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 1468,
+      "note": "НЛ",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-10",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 154.97,
+      "note": "яйца, мука пшеничная (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-10",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 80.87,
+      "note": "мука, соль гималайская, соль поваренная (Магнит)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-13",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 46.99,
+      "note": "яйцо куриное (Красное&Белое)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-13",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 495.4,
+      "note": "Порталак сироп (аптека)",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-11",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 1500,
+      "note": "лазер",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-11",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 70,
+      "note": "вода",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-11",
+      "group": "mandatory",
+      "category": "Пром.товары",
+      "type": "expense",
+      "amount": 37,
+      "note": "подставка для телефона",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Пром.товары",
+      "type": "expense",
+      "amount": 278,
+      "note": "порошок для туалетов/выгребных ям, влажные салфетки, мыло хоз (АТОЛ)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 183,
+      "note": "б-продукты (Залифа)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-09",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 149.69,
+      "note": "сосиски (Красное&Белое)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "Другие источники",
+      "type": "income",
+      "amount": 82,
+      "note": "сверка баланса Халвы",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "Другие источники",
+      "type": "income",
+      "amount": 500,
+      "note": "с другого счёта",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-14",
+      "group": "mandatory",
+      "category": "Сотовая связь+Интернет",
+      "type": "expense",
+      "amount": 500,
+      "note": "Билайн",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "Другие источники",
+      "type": "income",
+      "amount": 3840,
+      "note": "пополнение",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-14",
+      "group": "mandatory",
+      "category": "Коммунальные платежи",
+      "type": "expense",
+      "amount": 2301.6,
+      "note": "квартплата",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-14",
+      "group": "mandatory",
+      "category": "Коммунальные платежи",
+      "type": "expense",
+      "amount": 587.8,
+      "note": "газ",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "Пенсия",
+      "type": "income",
+      "amount": 19969.41,
+      "note": "",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-14",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 1557.35,
+      "note": "форель стейк, молоко, хлеб карельский/белый, сырок творожный (Находка-550)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "Инвестиции",
+      "type": "expense",
+      "amount": 600,
+      "note": "перевод в накопления (счёт внутри Т-банка)",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-15",
+      "category": "Другие источники",
+      "type": "income",
+      "amount": 3800,
+      "note": "от Вани",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-16",
+      "group": "mandatory",
+      "category": "Пром.товары",
+      "type": "expense",
+      "amount": 718,
+      "note": "фильтр для воды",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-16",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 197,
+      "note": "таблетница",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-16",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 70,
+      "note": "вода",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-16",
+      "group": "mandatory",
+      "category": "Сотовая связь+Интернет",
+      "type": "expense",
+      "amount": 670,
+      "note": "Уфанет",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-16",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 1690,
+      "note": "НЛ",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-17",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 557,
+      "note": "сыр, масло крестьянское (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-17",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 207,
+      "note": "сахар, ряженка (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-17",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 273.84,
+      "note": "голень замороженная (Инаюшкин)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-17",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 2880,
+      "note": "анализы МедиаЛаб (кровь, B12, натрий/калий/хлор, гомоцистеин)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-16",
+      "category": "Доп доход",
+      "type": "income",
+      "amount": 225,
+      "note": "продажа овощей",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-17",
+      "category": "Доп доход",
+      "type": "income",
+      "amount": 300,
+      "note": "хаер",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-18",
+      "group": "mandatory",
+      "category": "Коммунальные платежи",
+      "type": "expense",
+      "amount": 1200.9,
+      "note": "кв. дом",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-18",
+      "group": "optional",
+      "category": "Образование",
+      "type": "expense",
+      "amount": 6670,
+      "note": "обучение ИИ",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-19",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 303.94,
+      "note": "уксус, макароны, шпроты, сырок творожный (Табыш)",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-19",
+      "group": "mandatory",
+      "category": "Пром.товары",
+      "type": "expense",
+      "amount": 159.99,
+      "note": "туалетная бумага",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-19",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 232.15,
+      "note": "кефир, ряженка, хлебцы ржаные",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-20",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 99.0,
+      "note": "зубная паста Лесной бальзам",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-20",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 279.98,
+      "note": "снеки (Магнат мор.с.кр-чиз сол.кар.)",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-20",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 134.98,
+      "note": "ряженка, молоко",
+      "account": "Т-банк"
+    }
   ]
 }
