@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T15:04:00+05:00",
+  "updated_at": "2026-08-21T15:05:30+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -852,7 +852,7 @@
       "category": "Другие источники",
       "type": "income",
       "amount": 4000,
-      "note": "",
+      "note": "от папы",
       "account": "Наличные"
     },
     {
@@ -860,7 +860,7 @@
       "category": "Другие источники",
       "type": "income",
       "amount": 16000,
-      "note": "",
+      "note": "от папы",
       "account": "Т-банк"
     }
   ]
