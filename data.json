@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T12:55:00+05:00",
+  "updated_at": "2026-08-21T13:10:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -719,7 +719,7 @@
       "type": "expense",
       "amount": 303.94,
       "note": "уксус, макароны, шпроты, сырок творожный (Табыш)",
-      "account": "Т-банк"
+      "account": "Халва"
     },
     {
       "date": "2026-08-19",
@@ -728,7 +728,7 @@
       "type": "expense",
       "amount": 159.99,
       "note": "туалетная бумага",
-      "account": "Т-банк"
+      "account": "Халва"
     },
     {
       "date": "2026-08-19",
@@ -737,7 +737,7 @@
       "type": "expense",
       "amount": 232.15,
       "note": "кефир, ряженка, хлебцы ржаные",
-      "account": "Т-банк"
+      "account": "Халва"
     },
     {
       "date": "2026-08-20",
@@ -746,7 +746,7 @@
       "type": "expense",
       "amount": 99.0,
       "note": "зубная паста Лесной бальзам",
-      "account": "Т-банк"
+      "account": "Халва"
     },
     {
       "date": "2026-08-20",
@@ -755,7 +755,7 @@
       "type": "expense",
       "amount": 279.98,
       "note": "снеки (Магнат мор.с.кр-чиз сол.кар.)",
-      "account": "Т-банк"
+      "account": "Халва"
     },
     {
       "date": "2026-08-20",
@@ -764,6 +764,60 @@
       "type": "expense",
       "amount": 134.98,
       "note": "ряженка, молоко",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-20",
+      "group": "mandatory",
+      "category": "Сотовая связь+Интернет",
+      "type": "expense",
+      "amount": 785,
+      "note": "Уфанет интернет",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-19",
+      "group": "mandatory",
+      "category": "Транспорт",
+      "type": "expense",
+      "amount": 46,
+      "note": "дорога",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-19",
+      "group": "mandatory",
+      "category": "Транспорт",
+      "type": "expense",
+      "amount": 46,
+      "note": "дорога",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-19",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 70,
+      "note": "вода",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-18",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 72,
+      "note": "соль",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-20",
+      "group": "mandatory",
+      "category": "Коммунальные платежи",
+      "type": "expense",
+      "amount": 1200.9,
+      "note": "квартплата дома (дата приблизительная, уточнить у неё)",
       "account": "Т-банк"
     }
   ]
