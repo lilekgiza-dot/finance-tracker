@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T17:39:30+05:00",
+  "updated_at": "2026-08-21T17:44:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -32,13 +32,6 @@
       "amount": 1866,
       "actual": 2054,
       "paid": true,
-      "is_bill": true
-    },
-    {
-      "name": "Т-банк обслуживание",
-      "amount": 99,
-      "paid": true,
-      "actual": 0,
       "is_bill": true
     },
     {
