@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T18:06:00+05:00",
+  "updated_at": "2026-08-21T18:14:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -59,14 +59,14 @@
       "name": "Хозяйственные товары",
       "amount": 1000,
       "paid": true,
-      "actual": 3068.98,
+      "actual": 3478.98,
       "is_bill": false
     },
     {
       "name": "Здоровье",
       "amount": 5000,
       "paid": true,
-      "actual": 9948.0,
+      "actual": 9538,
       "is_bill": false
     },
     {
@@ -279,7 +279,7 @@
     {
       "date": "2026-08-03",
       "group": "mandatory",
-      "category": "Здоровье + Красота",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 32,
       "note": "маска для лица",
@@ -403,7 +403,7 @@
     {
       "date": "2026-08-09",
       "group": "mandatory",
-      "category": "Здоровье + Красота",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 82,
       "note": "патчи",
@@ -622,7 +622,7 @@
     {
       "date": "2026-08-16",
       "group": "mandatory",
-      "category": "Здоровье + Красота",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 197,
       "note": "таблетница",
@@ -755,7 +755,7 @@
     {
       "date": "2026-08-20",
       "group": "mandatory",
-      "category": "Здоровье + Красота",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 99.0,
       "note": "зубная паста Лесной бальзам",
