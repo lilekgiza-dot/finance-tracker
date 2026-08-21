@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-21T16:30:00+05:00",
+  "updated_at": "2026-08-21T16:32:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 20761.06,
+  "balance": 25485.06,
   "accounts": [
     {
       "name": "Т-банк",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Наличные",
-      "amount": 0
+      "amount": 4724
     }
   ],
   "bills": [
