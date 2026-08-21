@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T16:32:00+05:00",
+  "updated_at": "2026-08-21T16:40:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -23,52 +23,62 @@
     {
       "name": "Кв. дом",
       "amount": 4000,
-      "paid": false
+      "paid": false,
+      "actual": 1200.9
     },
     {
       "name": "Телефон",
       "amount": 571,
-      "paid": false
+      "paid": false,
+      "actual": 0
     },
     {
       "name": "Т-банк обслуживание",
       "amount": 99,
-      "paid": false
+      "paid": false,
+      "actual": 0
     },
     {
       "name": "Интернет Wi-Fi",
       "amount": 1295,
-      "paid": false
+      "paid": false,
+      "actual": 785
     },
     {
       "name": "Комната",
       "amount": 5500,
-      "paid": false
+      "paid": false,
+      "actual": 0
     },
     {
       "name": "Дорога (Октябрьский/Туймазы + по городу)",
       "amount": 400,
-      "paid": false
+      "paid": false,
+      "actual": 92
     },
     {
       "name": "Еда (план на месяц)",
       "amount": 11000,
-      "paid": false
+      "paid": false,
+      "actual": 0
     },
     {
       "name": "Хоз",
       "amount": 1000,
-      "paid": false
+      "paid": false,
+      "actual": 279
     },
     {
       "name": "Здоровье",
       "amount": 5000,
-      "paid": false
+      "paid": false,
+      "actual": 0
     },
     {
       "name": "Вода",
       "amount": 630,
-      "paid": false
+      "paid": false,
+      "actual": 70
     }
   ],
   "annual_report": {

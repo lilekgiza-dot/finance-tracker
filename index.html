@@ -100,6 +100,7 @@
   .cat-list-row .detail { max-height: 0; overflow: hidden; transition: max-height 0.2s ease; }
   .cat-list-row.open .detail { max-height: 300px; margin-top: 8px; }
   .cat-list-row .detail-row { font-size: 12px; color: var(--muted); padding: 3px 0; border-top: 1px solid var(--gridline); }
+  .bill-sub { font-size: 12px; color: var(--muted); margin-top: 4px; padding-left: 28px; font-variant-numeric: tabular-nums; }
   .cat-hint { text-align: right; font-size: 11px; color: var(--muted); margin: -6px 0 8px; }
 
   .bottom-nav { display: flex; background: var(--page); border-radius: 14px; padding: 4px; gap: 2px; margin-top: 4px; }
@@ -283,23 +284,28 @@
 
   function renderBillsView(data) {
     var bills = data.bills || [];
-    var unpaid = bills.filter(function (b) { return !b.paid; });
-    var paidSum = bills.filter(function (b) { return b.paid; }).reduce(function (s, b) { return s + b.amount; }, 0);
-    var unpaidSum = unpaid.reduce(function (s, b) { return s + b.amount; }, 0);
+    var paidSum = bills.reduce(function (s, b) { return s + (b.actual || 0); }, 0);
+    var planSum = bills.reduce(function (s, b) { return s + b.amount; }, 0);
     var list = bills.length
       ? bills.map(function (b) {
+          var actual = b.actual || 0;
+          var dev = b.amount - actual;
+          var devColor = dev >= 0 ? "var(--good)" : "var(--critical)";
+          var devText = (dev >= 0 ? "+" : "-") + money(Math.abs(dev));
           return '<div class="cat-list-row" style="cursor:default;"><div class="head">' +
             '<span class="icon">' + (b.paid ? "✅" : "🔲") + '</span>' +
             '<span class="name">' + b.name + '</span>' +
-            '<span class="amt" style="color:' + (b.paid ? "var(--good)" : "#c98500") + '">' + money(b.amount) + '</span>' +
-            '</div></div>';
+            '<span class="amt" style="color:var(--text-secondary)">План ' + money(b.amount) + '</span>' +
+            '</div>' +
+            '<div class="bill-sub">Факт: ' + money(actual) + ' &nbsp;·&nbsp; Отклонение: <span style="color:' + devColor + '">' + devText + '</span></div>' +
+            '</div>';
         }).join("")
       : '<div class="empty">Обязательных трат в этом месяце пока нет</div>';
     return (
       '<div class="card"><h2>Обязательные траты</h2>' +
         '<div class="stat-grid" style="margin-top:0;">' +
-          '<div class="stat-card"><div class="lbl">Осталось оплатить</div><div class="val amber">' + money(unpaidSum) + '</div></div>' +
-          '<div class="stat-card"><div class="lbl">Оплачено</div><div class="val good">' + money(paidSum) + '</div></div>' +
+          '<div class="stat-card"><div class="lbl">План на месяц</div><div class="val">' + money(planSum) + '</div></div>' +
+          '<div class="stat-card"><div class="lbl">Оплачено факт</div><div class="val good">' + money(paidSum) + '</div></div>' +
         '</div>' +
       '</div>' +
       '<div class="card"><h2>Список</h2>' + list + '</div>' +
