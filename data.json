@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T17:35:00+05:00",
+  "updated_at": "2026-08-21T17:37:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -23,7 +23,7 @@
     {
       "name": "Кв. дом",
       "amount": 4000,
-      "paid": false,
+      "paid": true,
       "actual": 1200.9,
       "is_bill": true
     },
@@ -37,14 +37,14 @@
     {
       "name": "Т-банк обслуживание",
       "amount": 99,
-      "paid": false,
+      "paid": true,
       "actual": 0,
       "is_bill": true
     },
     {
       "name": "Кв комнаты",
       "amount": 5500,
-      "paid": false,
+      "paid": true,
       "actual": 2889.3999999999996,
       "is_bill": true
     },
@@ -79,7 +79,7 @@
     {
       "name": "Вода",
       "amount": 630,
-      "paid": false,
+      "paid": true,
       "actual": 70,
       "is_bill": true
     }
