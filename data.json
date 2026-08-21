@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T17:37:00+05:00",
+  "updated_at": "2026-08-21T17:39:30+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -79,7 +79,7 @@
     {
       "name": "Вода",
       "amount": 630,
-      "paid": true,
+      "paid": false,
       "actual": 70,
       "is_bill": true
     }
