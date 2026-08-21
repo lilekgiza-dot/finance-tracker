@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T17:26:00+05:00",
+  "updated_at": "2026-08-21T17:32:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -24,55 +24,64 @@
       "name": "Кв. дом",
       "amount": 4000,
       "paid": false,
-      "actual": 1200.9
+      "actual": 1200.9,
+      "is_bill": true
     },
     {
       "name": "Сотовая связь+Интернет",
       "amount": 1866,
       "actual": 2054,
-      "paid": true
+      "paid": true,
+      "is_bill": true
     },
     {
       "name": "Т-банк обслуживание",
       "amount": 99,
       "paid": false,
-      "actual": 0
+      "actual": 0,
+      "is_bill": true
     },
     {
       "name": "Комната",
       "amount": 5500,
       "paid": false,
-      "actual": 2889.3999999999996
+      "actual": 2889.3999999999996,
+      "is_bill": true
     },
     {
       "name": "Дорога (Октябрьский/Туймазы + по городу)",
       "amount": 400,
       "paid": false,
-      "actual": 92
+      "actual": 92,
+      "is_bill": false
     },
     {
       "name": "Еда (план на месяц)",
       "amount": 11000,
       "paid": false,
-      "actual": 0
+      "actual": 0,
+      "is_bill": false
     },
     {
       "name": "Хоз",
       "amount": 1000,
       "paid": false,
-      "actual": 279
+      "actual": 279,
+      "is_bill": false
     },
     {
       "name": "Здоровье",
       "amount": 5000,
       "paid": true,
-      "actual": 10820.4
+      "actual": 10820.4,
+      "is_bill": false
     },
     {
       "name": "Вода",
       "amount": 630,
       "paid": false,
-      "actual": 70
+      "actual": 70,
+      "is_bill": true
     }
   ],
   "annual_report": {

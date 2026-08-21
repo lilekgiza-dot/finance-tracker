@@ -292,8 +292,9 @@
           var dev = b.amount - actual;
           var devColor = dev >= 0 ? "var(--good)" : "var(--critical)";
           var devText = (dev >= 0 ? "+" : "-") + money(Math.abs(dev));
+          var icon = b.is_bill ? (b.paid ? "✅" : "🔲") : "📊";
           return '<div class="cat-list-row" style="cursor:default;"><div class="head">' +
-            '<span class="icon">' + (b.paid ? "✅" : "🔲") + '</span>' +
+            '<span class="icon">' + icon + '</span>' +
             '<span class="name">' + b.name + '</span>' +
             '<span class="amt" style="color:var(--text-secondary)">План ' + money(b.amount) + '</span>' +
             '</div>' +
