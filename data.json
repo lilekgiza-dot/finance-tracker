@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T17:44:00+05:00",
+  "updated_at": "2026-08-21T18:06:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -56,17 +56,17 @@
       "is_bill": false
     },
     {
-      "name": "Хоз",
+      "name": "Хозяйственные товары",
       "amount": 1000,
-      "paid": false,
-      "actual": 279,
+      "paid": true,
+      "actual": 3068.98,
       "is_bill": false
     },
     {
       "name": "Здоровье",
       "amount": 5000,
       "paid": true,
-      "actual": 10820.4,
+      "actual": 9948.0,
       "is_bill": false
     },
     {
@@ -75,6 +75,13 @@
       "paid": false,
       "actual": 70,
       "is_bill": true
+    },
+    {
+      "name": "Аптека",
+      "amount": 0,
+      "actual": 872.4,
+      "paid": false,
+      "is_bill": false
     }
   ],
   "annual_report": {
@@ -120,7 +127,7 @@
         "plan": null
       },
       {
-        "name": "Пром.товары",
+        "name": "Хозяйственные товары",
         "plan": null
       },
       {
@@ -129,6 +136,10 @@
       },
       {
         "name": "Здоровье + Красота",
+        "plan": null
+      },
+      {
+        "name": "Аптека",
         "plan": null
       }
     ],
@@ -147,10 +158,6 @@
       },
       {
         "name": "Крупные покупки",
-        "plan": null
-      },
-      {
-        "name": "Дом, сад и огород",
         "plan": null
       },
       {
@@ -236,7 +243,7 @@
     {
       "date": "2026-08-01",
       "group": "optional",
-      "category": "Дом, сад и огород",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 558,
       "note": "крышки для консервации",
@@ -245,7 +252,7 @@
     {
       "date": "2026-08-01",
       "group": "mandatory",
-      "category": "Пром.товары",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 248,
       "note": "фоторамка, зубной ополаскиватель",
@@ -263,7 +270,7 @@
     {
       "date": "2026-08-03",
       "group": "optional",
-      "category": "Дом, сад и огород",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 611,
       "note": "шнек",
@@ -414,7 +421,7 @@
     {
       "date": "2026-08-10",
       "group": "mandatory",
-      "category": "Здоровье + Красота",
+      "category": "Аптека",
       "type": "expense",
       "amount": 377,
       "note": "Но-шпа, никотиновая кислота (аптека)",
@@ -459,7 +466,7 @@
     {
       "date": "2026-08-13",
       "group": "mandatory",
-      "category": "Здоровье + Красота",
+      "category": "Аптека",
       "type": "expense",
       "amount": 495.4,
       "note": "Порталак сироп (аптека)",
@@ -486,7 +493,7 @@
     {
       "date": "2026-08-11",
       "group": "mandatory",
-      "category": "Пром.товары",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 37,
       "note": "подставка для телефона",
@@ -495,7 +502,7 @@
     {
       "date": "2026-08-09",
       "group": "mandatory",
-      "category": "Пром.товары",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 278,
       "note": "порошок для туалетов/выгребных ям, влажные салфетки, мыло хоз (АТОЛ)",
@@ -606,7 +613,7 @@
     {
       "date": "2026-08-16",
       "group": "mandatory",
-      "category": "Пром.товары",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 718,
       "note": "фильтр для воды",
@@ -730,7 +737,7 @@
     {
       "date": "2026-08-19",
       "group": "mandatory",
-      "category": "Пром.товары",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 159.99,
       "note": "туалетная бумага",
@@ -820,7 +827,7 @@
     {
       "date": "2026-08-18",
       "group": "mandatory",
-      "category": "Пром.товары",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 279.0,
       "note": "лоток для приборов + совок (Стиль Домовица)",
@@ -838,7 +845,7 @@
     {
       "date": "2026-08-18",
       "group": "optional",
-      "category": "Дом, сад и огород",
+      "category": "Хозяйственные товары",
       "type": "expense",
       "amount": 179.99,
       "note": "крышки для консервации (Магнит)",
