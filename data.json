@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T17:36:00+05:00",
+  "updated_at": "2026-08-28T17:39:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -73,7 +73,7 @@
       "name": "Вода",
       "amount": 630,
       "paid": false,
-      "actual": 175,
+      "actual": 70,
       "is_bill": true
     },
     {
@@ -1023,19 +1023,19 @@
     {
       "date": "2026-08-24",
       "group": "mandatory",
-      "category": "Коммунальные платежи",
+      "category": "Продукты питания",
       "type": "expense",
       "amount": 70,
-      "note": "вода",
+      "note": "питьевая вода",
       "account": "Т-банк"
     },
     {
       "date": "2026-08-26",
       "group": "mandatory",
-      "category": "Коммунальные платежи",
+      "category": "Продукты питания",
       "type": "expense",
       "amount": 35,
-      "note": "вода",
+      "note": "питьевая вода",
       "account": "Т-банк"
     },
     {
