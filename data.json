@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-28T17:32:00+05:00",
+  "updated_at": "2026-08-28T17:33:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 23036.11,
+  "balance": 22886.11,
   "accounts": [
     {
       "name": "Т-банк",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Наличные",
-      "amount": 4724
+      "amount": 4574
     }
   ],
   "bills": [
@@ -1010,6 +1010,15 @@
       "amount": 25.0,
       "note": "контейнер для сбора биоматериала (аптека Мальва)",
       "account": "Халва"
+    },
+    {
+      "date": "2026-08-24",
+      "group": "mandatory",
+      "category": "Транспорт",
+      "type": "expense",
+      "amount": 150,
+      "note": "такси",
+      "account": "Наличные"
     }
   ]
 }
