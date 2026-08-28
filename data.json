@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-28T17:46:00+05:00",
+  "updated_at": "2026-08-28T17:48:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 16481.11,
+  "balance": 15881.11,
   "accounts": [
     {
       "name": "Т-банк",
-      "amount": 11763.49
+      "amount": 11163.49
     },
     {
       "name": "Халва",
@@ -1055,6 +1055,22 @@
       "amount": 4025,
       "note": "БАД",
       "account": "Халва"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "Инвестиции",
+      "type": "expense",
+      "amount": 300,
+      "note": "перевод в накопления",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "Инвестиции",
+      "type": "expense",
+      "amount": 300,
+      "note": "личные накопления",
+      "account": "Т-банк"
     }
   ]
 }
