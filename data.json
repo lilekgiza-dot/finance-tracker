@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-08-21T18:14:00+05:00",
+  "updated_at": "2026-08-28T14:35:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 25485.06,
+  "balance": 24640.97,
   "accounts": [
     {
       "name": "Т-банк",
-      "amount": 20342.59
+      "amount": 19968.49
     },
     {
       "name": "Халва",
-      "amount": 418.47
+      "amount": -51.52
     },
     {
       "name": "Наличные",
@@ -79,8 +79,8 @@
     {
       "name": "Аптека",
       "amount": 0,
-      "actual": 872.4,
-      "paid": false,
+      "actual": 1246.5,
+      "paid": true,
       "is_bill": false
     }
   ],
@@ -875,6 +875,42 @@
       "amount": 16000,
       "note": "от папы",
       "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-22",
+      "group": "mandatory",
+      "category": "Аптека",
+      "type": "expense",
+      "amount": 374.1,
+      "note": "Элтацин таб. подъязычные №3",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-22",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 218.0,
+      "note": "творог 5% 300г x2 (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-22",
+      "group": "mandatory",
+      "category": "Хозяйственные товары",
+      "type": "expense",
+      "amount": 199.0,
+      "note": "пакеты для одноразового использования (Чижик)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-22",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 52.99,
+      "note": "хлеб бородинский (Пятёрочка)",
+      "account": "Халва"
     }
   ]
 }
