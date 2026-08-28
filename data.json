@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-28T14:35:00+05:00",
+  "updated_at": "2026-08-28T14:38:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 24640.97,
+  "balance": 23980.03,
   "accounts": [
     {
       "name": "Т-банк",
@@ -12,7 +12,7 @@
     },
     {
       "name": "Халва",
-      "amount": -51.52
+      "amount": -712.46
     },
     {
       "name": "Наличные",
@@ -910,6 +910,51 @@
       "type": "expense",
       "amount": 52.99,
       "note": "хлеб бородинский (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-24",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 326.94,
+      "note": "хлеб, яйца, мини-рулеты, молоко, сырки (Табыш)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-24",
+      "group": "mandatory",
+      "category": "Транспорт",
+      "type": "expense",
+      "amount": 46.0,
+      "note": "автобус ПАЗ, Октябрьский",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-24",
+      "group": "mandatory",
+      "category": "Транспорт",
+      "type": "expense",
+      "amount": 104.0,
+      "note": "автобус маршрут 106, Туймазы-Октябрьский",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-24",
+      "group": "mandatory",
+      "category": "Транспорт",
+      "type": "expense",
+      "amount": 92.0,
+      "note": "автобус маршрут 108, Тукмак-Каран - Туймазы",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-24",
+      "group": "mandatory",
+      "category": "Транспорт",
+      "type": "expense",
+      "amount": 92.0,
+      "note": "автобус маршрут 108, Тукмак-Каран - Туймазы",
       "account": "Халва"
     }
   ]
