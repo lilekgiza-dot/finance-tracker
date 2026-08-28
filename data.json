@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-28T17:48:00+05:00",
+  "updated_at": "2026-08-28T17:51:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 15881.11,
+  "balance": 13881.11,
   "accounts": [
     {
       "name": "Т-банк",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Наличные",
-      "amount": 4574
+      "amount": 2574
     }
   ],
   "bills": [
@@ -1071,6 +1071,15 @@
       "amount": 300,
       "note": "личные накопления",
       "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-28",
+      "group": "optional",
+      "category": "Непредвиденные затраты",
+      "type": "expense",
+      "amount": 2000,
+      "note": "ремонт электрики",
+      "account": "Наличные"
     }
   ]
 }
