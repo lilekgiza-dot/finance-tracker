@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-28T17:39:00+05:00",
+  "updated_at": "2026-08-28T17:46:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 20506.11,
+  "balance": 16481.11,
   "accounts": [
     {
       "name": "Т-банк",
@@ -12,7 +12,7 @@
     },
     {
       "name": "Халва",
-      "amount": 4168.62
+      "amount": 143.62
     },
     {
       "name": "Наличные",
@@ -66,7 +66,7 @@
       "name": "Здоровье",
       "amount": 5000,
       "paid": true,
-      "actual": 11813,
+      "actual": 15838,
       "is_bill": false
     },
     {
@@ -1046,6 +1046,15 @@
       "amount": 2275,
       "note": "БАДы",
       "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-22",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 4025,
+      "note": "БАД",
+      "account": "Халва"
     }
   ]
 }
