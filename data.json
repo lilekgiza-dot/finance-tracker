@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-28T14:42:00+05:00",
+  "updated_at": "2026-08-28T14:44:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 23583.44,
+  "balance": 23036.11,
   "accounts": [
     {
       "name": "Т-банк",
@@ -12,7 +12,7 @@
     },
     {
       "name": "Халва",
-      "amount": -1109.05
+      "amount": -1656.38
     },
     {
       "name": "Наличные",
@@ -79,7 +79,7 @@
     {
       "name": "Аптека",
       "amount": 0,
-      "actual": 1246.5,
+      "actual": 1271.5,
       "paid": true,
       "is_bill": false
     }
@@ -973,6 +973,42 @@
       "type": "expense",
       "amount": 123.88,
       "note": "арбуз со скидкой пенсионера (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-26",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 296.95,
+      "note": "хлебцы ранние x4, сметана (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-26",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 125.0,
+      "note": "мороженое Магнат (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-26",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 100.38,
+      "note": "мука цельнозерновая, соль (Магнит)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-26",
+      "group": "mandatory",
+      "category": "Аптека",
+      "type": "expense",
+      "amount": 25.0,
+      "note": "контейнер для сбора биоматериала (аптека Мальва)",
       "account": "Халва"
     }
   ]
