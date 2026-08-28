@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T17:54:00+05:00",
+  "updated_at": "2026-08-28T17:55:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -79,7 +79,7 @@
     {
       "name": "Аптека",
       "amount": 0,
-      "actual": 1271.5,
+      "actual": 1296.5,
       "paid": true,
       "is_bill": false
     }
@@ -1083,8 +1083,8 @@
     },
     {
       "date": "2026-08-25",
-      "group": "optional",
-      "category": "Развлечения, подарки",
+      "group": "mandatory",
+      "category": "Аптека",
       "type": "expense",
       "amount": 25,
       "note": "крем папе",
