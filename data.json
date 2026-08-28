@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-28T17:55:00+05:00",
+  "updated_at": "2026-08-28T18:01:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 13856.11,
+  "balance": 14556.11,
   "accounts": [
     {
       "name": "Т-банк",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Наличные",
-      "amount": 2574
+      "amount": 3274
     }
   ],
   "bills": [
@@ -1089,6 +1089,14 @@
       "amount": 25,
       "note": "крем папе",
       "account": "Халва"
+    },
+    {
+      "date": "2026-08-26",
+      "category": "Другие источники",
+      "type": "income",
+      "amount": 700,
+      "note": "",
+      "account": "Наличные"
     }
   ]
 }
