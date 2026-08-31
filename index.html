@@ -283,13 +283,20 @@
     }).join("") + '</div>';
   }
 
+  function billActual(data, b) {
+    if (!b.category) return b.actual || 0;
+    return (data.operations || []).reduce(function (s, o) {
+      return s + (o.type === "expense" && o.category === b.category ? o.amount : 0);
+    }, 0);
+  }
+
   function renderBillsView(data) {
     var bills = data.bills || [];
-    var paidSum = bills.reduce(function (s, b) { return s + (b.actual || 0); }, 0);
+    var paidSum = bills.reduce(function (s, b) { return s + billActual(data, b); }, 0);
     var planSum = bills.reduce(function (s, b) { return s + b.amount; }, 0);
     var list = bills.length
       ? bills.map(function (b) {
-          var actual = b.actual || 0;
+          var actual = billActual(data, b);
           var dev = b.amount - actual;
           var devColor = dev >= 0 ? "var(--good)" : "var(--critical)";
           var devText = (dev >= 0 ? "+" : "-") + money(Math.abs(dev));

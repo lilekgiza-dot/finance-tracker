@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-28T18:04:00+05:00",
+  "updated_at": "2026-08-31T04:56:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -52,8 +52,8 @@
       "name": "Еда (план на месяц)",
       "amount": 11000,
       "paid": false,
-      "actual": 0,
-      "is_bill": false
+      "is_bill": false,
+      "category": "Продукты питания"
     },
     {
       "name": "Хозяйственные товары",
