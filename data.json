@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-31T05:16:00+05:00",
+  "updated_at": "2026-08-31T05:18:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 37509.42,
+  "balance": 37441.42,
   "accounts": [
     {
       "name": "Т-банк",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Наличные",
-      "amount": 617
+      "amount": 549
     }
   ],
   "bills": [
@@ -1155,7 +1155,7 @@
       "group": "optional",
       "category": "Непредвиденные затраты",
       "type": "expense",
-      "amount": 57,
+      "amount": 125,
       "note": "расхождение — потерялись",
       "account": "Наличные"
     }
