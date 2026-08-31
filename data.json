@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-31T09:35:00+05:00",
+  "updated_at": "2026-08-31T09:37:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 36709.19,
+  "balance": 36493.19,
   "accounts": [
     {
       "name": "Т-банк",
-      "amount": 35497.69
+      "amount": 35281.69
     },
     {
       "name": "Халва",
@@ -79,7 +79,7 @@
     {
       "name": "Аптека",
       "amount": 0,
-      "actual": 1296.5,
+      "actual": 1512.5,
       "paid": true,
       "is_bill": false
     }
@@ -1203,6 +1203,15 @@
       "amount": 149.99,
       "note": "сосиски молочные из индейки (Магнит)",
       "account": "Халва"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "mandatory",
+      "category": "Аптека",
+      "type": "expense",
+      "amount": 216.0,
+      "note": "аптечный пункт",
+      "account": "Т-банк"
     }
   ]
 }
