@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-31T05:04:00+05:00",
+  "updated_at": "2026-08-31T05:15:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 40166.42,
+  "balance": 37509.42,
   "accounts": [
     {
       "name": "Т-банк",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Наличные",
-      "amount": 3274
+      "amount": 617
     }
   ],
   "bills": [
@@ -1140,6 +1140,24 @@
       "amount": 70,
       "note": "питьевая вода",
       "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "optional",
+      "category": "Непредвиденные затраты",
+      "type": "expense",
+      "amount": 2600,
+      "note": "грузчики",
+      "account": "Наличные"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "optional",
+      "category": "Непредвиденные затраты",
+      "type": "expense",
+      "amount": 57,
+      "note": "расхождение — потерялись",
+      "account": "Наличные"
     }
   ]
 }
