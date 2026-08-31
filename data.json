@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-31T05:15:00+05:00",
+  "updated_at": "2026-08-31T05:16:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
@@ -1142,7 +1142,7 @@
       "account": "Т-банк"
     },
     {
-      "date": "2026-08-31",
+      "date": "2026-08-29",
       "group": "optional",
       "category": "Непредвиденные затраты",
       "type": "expense",
@@ -1151,7 +1151,7 @@
       "account": "Наличные"
     },
     {
-      "date": "2026-08-31",
+      "date": "2026-08-29",
       "group": "optional",
       "category": "Непредвиденные затраты",
       "type": "expense",
