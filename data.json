@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-08-31T05:18:00+05:00",
+  "updated_at": "2026-08-31T09:35:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 37441.42,
+  "balance": 36709.19,
   "accounts": [
     {
       "name": "Т-банк",
@@ -12,7 +12,7 @@
     },
     {
       "name": "Халва",
-      "amount": 1394.73
+      "amount": 662.5
     },
     {
       "name": "Наличные",
@@ -1158,6 +1158,51 @@
       "amount": 125,
       "note": "расхождение — потерялись",
       "account": "Наличные"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 65.99,
+      "note": "яйца куриные С0 10шт (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 89.97,
+      "note": "батон, йогурты Простоквашино 2шт (Табыш)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 251.98,
+      "note": "колбаса докторская, молоко (Пятёрочка)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 174.3,
+      "note": "крыло индейки 0.7кг (КясРыбТорг)",
+      "account": "Халва"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 149.99,
+      "note": "сосиски молочные из индейки (Магнит)",
+      "account": "Халва"
     }
   ]
 }
