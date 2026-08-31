@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-31T05:02:00+05:00",
+  "updated_at": "2026-08-31T05:04:00+05:00",
   "month_label": "Август 2026",
   "month_start": "2026-08-01",
   "days_in_month": 31,
   "balance_label": "Итого по всем счетам",
-  "balance": 41875.42,
+  "balance": 40166.42,
   "accounts": [
     {
       "name": "Т-банк",
-      "amount": 37206.69
+      "amount": 35497.69
     },
     {
       "name": "Халва",
@@ -1121,6 +1121,24 @@
       "type": "income",
       "amount": 3000,
       "note": "продажа старого холодильника",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-30",
+      "group": "mandatory",
+      "category": "Здоровье + Красота",
+      "type": "expense",
+      "amount": 1639,
+      "note": "медитации",
+      "account": "Т-банк"
+    },
+    {
+      "date": "2026-08-31",
+      "group": "mandatory",
+      "category": "Продукты питания",
+      "type": "expense",
+      "amount": 70,
+      "note": "питьевая вода",
       "account": "Т-банк"
     }
   ]
